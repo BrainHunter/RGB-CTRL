@@ -1,0 +1,300 @@
+# depslib dependency file v1.0
+1426523046 source:d:\source\rgb-ctrl\hmw485-lib\hbw-lc-sw8.cpp
+	"HBW-LC-Sw8.h"
+	<SoftwareSerial.h>
+	"HMWDebug.h"
+	<OneWire.h>
+	<EEPROM.h>
+	"HMWRS485.h"
+	"HMWModule.h"
+	"HMWRegister.h"
+
+1426523046 d:\source\rgb-ctrl\hmw485-lib\hbw-lc-sw8.h
+	"Arduino.h"
+
+1426523046 d:\source\rgb-ctrl\hmw485-lib\arduino.h
+	<stdbool.h>
+	<stdint.h>
+	<String.h>
+	"Stream.h"
+	"Arduino-EEPROM.h"
+
+1426526565 d:\source\rgb-ctrl\hmw485-lib\stream.h
+	<stddef.h>
+	<stdint.h>
+
+1426523046 d:\source\rgb-ctrl\eeprom\arduino-eeprom.h
+	<stdint.h>
+	"eeprom.h"
+
+1426523046 d:\source\rgb-ctrl\eeprom\eeprom.h
+	"stm32f10x.h"
+
+1426523773 d:\source\rgb-ctrl\inc\stm32f10x.h
+	"core_cm3.h"
+	"system_stm32f10x.h"
+	<stdint.h>
+	"stm32f10x_conf.h"
+
+1426523773 d:\source\rgb-ctrl\cmsis\core_cm3.h
+	<stdint.h>
+	<core_cmInstr.h>
+	<core_cmFunc.h>
+
+1426523773 d:\source\rgb-ctrl\cmsis\core_cminstr.h
+	<cmsis_iar.h>
+	<cmsis_ccs.h>
+
+1426523773 d:\source\rgb-ctrl\cmsis\core_cmfunc.h
+	<cmsis_iar.h>
+	<cmsis_ccs.h>
+
+1426523773 d:\source\rgb-ctrl\inc\system_stm32f10x.h
+
+1426523046 d:\source\rgb-ctrl\inc\stm32f10x_conf.h
+	"stm32f10x_can.h"
+	"stm32f10x_dma.h"
+	"stm32f10x_flash.h"
+	"stm32f10x_gpio.h"
+	"stm32f10x_rcc.h"
+	"stm32f10x_tim.h"
+	"stm32f10x_usart.h"
+	"misc.h"
+
+1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_can.h
+	"stm32f10x.h"
+
+1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_dma.h
+	"stm32f10x.h"
+
+1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_flash.h
+	"stm32f10x.h"
+
+1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_gpio.h
+	"stm32f10x.h"
+
+1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_rcc.h
+	"stm32f10x.h"
+
+1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_tim.h
+	"stm32f10x.h"
+
+1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_usart.h
+	"stm32f10x.h"
+
+1426523773 d:\source\rgb-ctrl\spl\inc\misc.h
+	"stm32f10x.h"
+
+1426523046 d:\source\rgb-ctrl\hmw485-lib\hmwdebug.h
+	"Arduino.h"
+
+1426628783 d:\source\rgb-ctrl\hmw485-lib\hmwrs485.h
+	"Arduino.h"
+	"Stream.h"
+
+1426702312 d:\source\rgb-ctrl\hmw485-lib\hmwmodule.h
+	"HMWRS485.h"
+	"Arduino.h"
+
+1426523046 d:\source\rgb-ctrl\hmw485-lib\hmwregister.h
+
+1426796304 source:d:\source\rgb-ctrl\hmw485-lib\hmwmodule.cpp
+	"HMWModule.h"
+	"PrintfDebug.h"
+	<stdio.h>
+	<EEPROM.h>
+
+1426523046 d:\source\rgb-ctrl\hmw485-lib\printfdebug.h
+	<stdio.h>
+
+1426628786 source:d:\source\rgb-ctrl\hmw485-lib\hmwrs485.cpp
+	"HMWRS485.h"
+	"PrintfDebug.h"
+	"Arduino.h"
+
+1426702350 source:d:\source\rgb-ctrl\hmw485-lib\hmwwrapper.cpp
+	"HMWWrapper.h"
+	"HMWRS485.h"
+	"HMWModule.h"
+	"rs485Stream.h"
+	"rs485.h"
+
+1426618202 d:\source\rgb-ctrl\hmw485-lib\hmwwrapper.h
+
+1426526575 d:\source\rgb-ctrl\rs485\rs485stream.h
+	"Stream.h"
+	<stdint.h>
+
+1426523046 d:\source\rgb-ctrl\rs485\rs485.h
+	<stdint.h>
+
+1426523025 source:d:\source\rgb-ctrl\rs485\hm485.c
+	"HM485.h"
+
+1426523025 d:\source\rgb-ctrl\rs485\hm485.h
+
+1426627307 source:d:\source\rgb-ctrl\rs485\rs485.c
+	"rs485.h"
+	"stm32f10x_conf.h"
+
+1426526583 source:d:\source\rgb-ctrl\rs485\rs485stream.cpp
+	"rs485Stream.h"
+	"rs485.h"
+
+1426523773 source:d:\source\rgb-ctrl\spl\src\misc.c
+	"misc.h"
+
+1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_adc.c
+	"stm32f10x_adc.h"
+	"stm32f10x_rcc.h"
+
+1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_adc.h
+	"stm32f10x.h"
+
+1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_bkp.c
+	"stm32f10x_bkp.h"
+	"stm32f10x_rcc.h"
+
+1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_bkp.h
+	"stm32f10x.h"
+
+1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_can.c
+	"stm32f10x_can.h"
+	"stm32f10x_rcc.h"
+
+1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_cec.c
+	"stm32f10x_cec.h"
+	"stm32f10x_rcc.h"
+
+1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_cec.h
+	"stm32f10x.h"
+
+1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_crc.c
+	"stm32f10x_crc.h"
+
+1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_crc.h
+	"stm32f10x.h"
+
+1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_dac.c
+	"stm32f10x_dac.h"
+	"stm32f10x_rcc.h"
+
+1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_dac.h
+	"stm32f10x.h"
+
+1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_dbgmcu.c
+	"stm32f10x_dbgmcu.h"
+
+1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_dbgmcu.h
+	"stm32f10x.h"
+
+1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_dma.c
+	"stm32f10x_dma.h"
+	"stm32f10x_rcc.h"
+
+1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_exti.c
+	"stm32f10x_exti.h"
+
+1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_exti.h
+	"stm32f10x.h"
+
+1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_flash.c
+	"stm32f10x_flash.h"
+
+1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_fsmc.c
+	"stm32f10x_fsmc.h"
+	"stm32f10x_rcc.h"
+
+1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_fsmc.h
+	"stm32f10x.h"
+
+1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_gpio.c
+	"stm32f10x_gpio.h"
+	"stm32f10x_rcc.h"
+
+1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_i2c.c
+	"stm32f10x_i2c.h"
+	"stm32f10x_rcc.h"
+
+1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_i2c.h
+	"stm32f10x.h"
+
+1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_iwdg.c
+	"stm32f10x_iwdg.h"
+
+1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_iwdg.h
+	"stm32f10x.h"
+
+1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_pwr.c
+	"stm32f10x_pwr.h"
+	"stm32f10x_rcc.h"
+
+1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_pwr.h
+	"stm32f10x.h"
+
+1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_rcc.c
+	"stm32f10x_rcc.h"
+
+1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_rtc.c
+	"stm32f10x_rtc.h"
+
+1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_rtc.h
+	"stm32f10x.h"
+
+1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_sdio.c
+	"stm32f10x_sdio.h"
+	"stm32f10x_rcc.h"
+
+1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_sdio.h
+	"stm32f10x.h"
+
+1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_spi.c
+	"stm32f10x_spi.h"
+	"stm32f10x_rcc.h"
+
+1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_spi.h
+	"stm32f10x.h"
+
+1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_tim.c
+	"stm32f10x_tim.h"
+	"stm32f10x_rcc.h"
+
+1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_usart.c
+	"stm32f10x_usart.h"
+	"stm32f10x_rcc.h"
+
+1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_wwdg.c
+	"stm32f10x_wwdg.h"
+	"stm32f10x_rcc.h"
+
+1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_wwdg.h
+	"stm32f10x.h"
+
+1426523046 source:d:\source\rgb-ctrl\eeprom\arduino-eeprom.cpp
+	"Arduino-EEPROM.h"
+	"eeprom.h"
+
+1426523025 source:d:\source\rgb-ctrl\eeprom\eeprom.c
+	"eeprom.h"
+
+1426523773 source:d:\source\rgb-ctrl\src\startup_stm32f10x_md.s
+
+1426523773 source:d:\source\rgb-ctrl\src\system_stm32f10x.c
+	"stm32f10x.h"
+
+1426630288 source:d:\source\rgb-ctrl\src\main.c
+	"stm32f10x_conf.h"
+	<stdio.h>
+	<math.h>
+	"HMWWrapper.h"
+	"eeprom.h"
+
+1426541811 source:d:\source\rgb-ctrl\src\tinynew.cpp
+	<new>
+	<malloc.h>
+
+1426628456 source:d:\source\rgb-ctrl\src\printf.c
+	<stdio.h>
+	<stdarg.h>
+	"stm32f10x_conf.h"
+
