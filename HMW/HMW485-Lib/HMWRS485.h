@@ -39,15 +39,15 @@ public:
 
 	// Modul-Definition, wird vom Modul selbst gesetzt
 	// TODO: Ist das gutes Design?
-   HMWModuleBase* module;
+    HMWModuleBase* module;
 
     // Senderadresse beim Empfangen
     // TODO: Das sollte private sein, wird aber momentan noch vom Modul verwendet
-	unsigned long senderAddress;
+	uint32_t senderAddress;
 
 	// Senden
-	unsigned long txSenderAddress;       // eigene Adresse
-	unsigned long txTargetAddress;        // Adresse des Moduls
+	uint32_t txSenderAddress;       // eigene Adresse
+	uint32_t txTargetAddress;        // Adresse des Moduls
 	byte txFrameControlByte;
     byte txFrameDataLength;              // Laenge der Daten + Checksum
 	byte txFrameData[MAX_RX_FRAME_LENGTH];
@@ -62,7 +62,7 @@ private:
 // Empfangene Daten
 	// Empfangen
 	byte frameComplete;
-    unsigned long targetAddress;
+    uint32_t targetAddress;
 	byte frameDataLength;                 // Laenge der Daten
 	byte frameData[MAX_RX_FRAME_LENGTH];
 	byte startByte;

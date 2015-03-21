@@ -177,7 +177,7 @@ void HMWModule::processEventKey(){
 	// TODO
 };
 
-   void HMWModule::processEventSetLevel(byte channel, uint32_t level){
+   void HMWModule::processEventSetLevel(byte channel, uint16_t level){
 	 // tell the hardware
      device->setLevel(channel, level);
      // get what the hardware did and send it back
@@ -264,7 +264,7 @@ void HMWModule::processEventKey(){
    };
 
    // "i-Message" ueber broadcast senden
-     void HMWModule::sendInfoMessage(byte channel, unsigned int info, unsigned long target_address) {
+     void HMWModule::sendInfoMessage(byte channel, uint16_t info, uint32_t target_address) {
   	   hmwrs485->txTargetAddress = target_address;  // normally central or broadcast
   	   hmwrs485->txFrameControlByte = 0xF8;     // control byte
   	   hmwrs485->txFrameDataLength = 0x04;      // Length
@@ -276,7 +276,7 @@ void HMWModule::processEventKey(){
      };
 
 
-     void HMWModule::writeEEPROM(int address, byte value, bool privileged ) {
+     void HMWModule::writeEEPROM(int16_t address, byte value, bool privileged ) {
        // save uppermost 4 bytes
        if(!privileged && (address > (int)(E2END - 4)))
     	 return;

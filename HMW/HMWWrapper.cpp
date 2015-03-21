@@ -5,21 +5,24 @@
 #include "rs485Stream.h"
 #include "rs485.h"
 #include "DebugStream.h"
+#include "rgb.h"
 
 // Klasse fuer Callbacks vom Protokoll
 class HMWDevice : public HMWDeviceBase {
   public:
 
-	void setLevel(byte channel,uint32_t level) {
-
+    //  channel 0..2 level 0..100
+	void setLevel(byte channel,uint16_t level) {
+        RGB_setChannel(channel,(float)level/200.0);
 
 	}
 
 
-	unsigned int getLevel(byte channel) {
-		return 12;
+	uint16_t getLevel(byte channel) {
+		uint16_t ret;
+		ret = RGB_getChannel(channel)*200.0;
+		return ret;
 	};
-
 
 
 	void readConfig(){
@@ -43,9 +46,8 @@ void Init_HMW(){
 	hmwrs485 = new HMWRS485(&RS485Stream, 0);
 	hmwmodule = new HMWModule(&hmwdevice, hmwrs485, 0xA0);
 
-
+    // initial Broadcast Announce at power up
     hmwmodule->broadcastAnnounce(0);
-
 
 }
 

@@ -270,6 +270,10 @@
 		<Unit filename="inc\stm32f10x_conf.h" />
 		<Unit filename="inc\system_stm32f10x.h" />
 		<Unit filename="readme.txt" />
+		<Unit filename="rgb\rgb.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="rgb\rgb.h" />
 		<Unit filename="src\main.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -20,8 +20,8 @@
 // Abstrakte Basisklasse mit Callbacks aus dem Modul
 class HMWDeviceBase {
   public:
-	virtual void setLevel(byte,uint32_t) = 0;  // channel, level
-	virtual unsigned int getLevel(byte) = 0;       // channel, returns level
+	virtual void setLevel(byte,uint16_t) = 0;  // channel, level
+	virtual uint16_t getLevel(byte) = 0;       // channel, returns level
 	virtual void readConfig() = 0;         // read config from EEPROM
 };
 
@@ -34,13 +34,13 @@ public:
 
 	void broadcastAnnounce(byte);  // channel
 	void broadcastKeyEvent(byte, byte, byte = 0);  // channel, keyPressNum, long/short (long = 1)
-	void sendInfoMessage(byte, unsigned int, unsigned long);   // channel, info, target address
+	void sendInfoMessage(byte, uint16_t, uint32_t);   // channel, info, target address
 
 	byte deviceType;        // device type @ 0x7FF1 in FlashRom  TODO: Not really...
 
 	// write to EEPROM, but only if not "value" anyway
 	// the uppermost 4 bytes are reserved for the device address and can only be changed if privileged = true
-	void writeEEPROM(int address, byte value, bool privileged = false );
+	void writeEEPROM(int16_t address, byte value, bool privileged = false );
 	void setNewId();
 
 private:
@@ -51,8 +51,7 @@ private:
 	void determineSerial(byte*);
 
 	void processEventKey();
-    //void processEventSetLevel(byte channel, uint16_t level);
-    void processEventSetLevel(byte channel, uint32_t level);
+    void processEventSetLevel(byte channel, uint16_t level);
 	void processEventGetLevel(byte channel);
 	void processEventSetLock();
 	void processEmessage(byte const * const frameData);

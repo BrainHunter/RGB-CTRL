@@ -282,12 +282,13 @@
 1426523773 source:d:\source\rgb-ctrl\src\system_stm32f10x.c
 	"stm32f10x.h"
 
-1426630288 source:d:\source\rgb-ctrl\src\main.c
+1426975534 source:d:\source\rgb-ctrl\src\main.c
 	"stm32f10x_conf.h"
 	<stdio.h>
 	<math.h>
 	"HMWWrapper.h"
 	"eeprom.h"
+	"rgb.h"
 
 1426541811 source:d:\source\rgb-ctrl\src\tinynew.cpp
 	<new>
@@ -298,23 +299,23 @@
 	<stdarg.h>
 	"stm32f10x_conf.h"
 
-1426972377 source:d:\source\rgb-ctrl\hmw\debugstream.cpp
+1426972683 source:d:\source\rgb-ctrl\hmw\debugstream.cpp
 	"DebugStream.h"
 	"stdio.h"
 
 1426972396 d:\source\rgb-ctrl\hmw\debugstream.h
 	"stream.h"
 
-1426970119 source:d:\source\rgb-ctrl\hmw\hmw485-lib\hmwmodule.cpp
+1426973315 source:d:\source\rgb-ctrl\hmw\hmw485-lib\hmwmodule.cpp
 	"HMWModule.h"
 	"HMWDebug.h"
 	<EEPROM.h>
 
-1426702312 d:\source\rgb-ctrl\hmw\hmw485-lib\hmwmodule.h
+1426975444 d:\source\rgb-ctrl\hmw\hmw485-lib\hmwmodule.h
 	"HMWRS485.h"
 	"Arduino.h"
 
-1426970298 d:\source\rgb-ctrl\hmw\hmw485-lib\hmwrs485.h
+1426973127 d:\source\rgb-ctrl\hmw\hmw485-lib\hmwrs485.h
 	"Arduino.h"
 
 1426970750 d:\source\rgb-ctrl\hmw\arduino.h
@@ -348,7 +349,7 @@
 	"HMWDebug.h"
 	"Arduino.h"
 
-1426971912 source:d:\source\rgb-ctrl\hmw\hmwwrapper.cpp
+1426975590 source:d:\source\rgb-ctrl\hmw\hmwwrapper.cpp
 	"HMWWrapper.h"
 	"HMWRS485.h"
 	"HMWModule.h"
@@ -356,6 +357,7 @@
 	"rs485Stream.h"
 	"rs485.h"
 	"DebugStream.h"
+	"rgb.h"
 
 1426618202 d:\source\rgb-ctrl\hmw\hmwwrapper.h
 
@@ -386,4 +388,12 @@
 	<math.h>
 	"Arduino.h"
 	"Print.h"
+
+1426975495 d:\source\rgb-ctrl\rgb\rgb.h
+	<stdint.h>
+
+1426975272 source:d:\source\rgb-ctrl\rgb\rgb.c
+	"rgb.h"
+	"stm32f10x_conf.h"
+	<math.h>
 
