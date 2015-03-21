@@ -1,8 +1,10 @@
 #include "HMWWrapper.h"
 #include "HMWRS485.h"
 #include "HMWModule.h"
+#include "HMWDebug.h"
 #include "rs485Stream.h"
 #include "rs485.h"
+#include "DebugStream.h"
 
 // Klasse fuer Callbacks vom Protokoll
 class HMWDevice : public HMWDeviceBase {
@@ -32,8 +34,11 @@ HMWRS485* hmwrs485;
 HMWModule* hmwmodule;
 
 
+
 void Init_HMW(){
 	rs485Init();
+
+	hmwdebugstream = new DebugStream();
 
 	hmwrs485 = new HMWRS485(&RS485Stream, 0);
 	hmwmodule = new HMWModule(&hmwdevice, hmwrs485, 0xA0);

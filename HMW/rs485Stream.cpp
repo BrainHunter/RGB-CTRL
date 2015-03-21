@@ -25,4 +25,18 @@ int RS485StreamClass::available(void){
 	return rs485BytesAvailable();
 }
 
+void RS485StreamClass::flush(void)
+{
+
+}
+
+size_t RS485StreamClass::print(const char[])
+{
+    return 0;
+}
+size_t RS485StreamClass::print(int, int)
+{
+    return 0;
+}
+
 RS485StreamClass RS485Stream;

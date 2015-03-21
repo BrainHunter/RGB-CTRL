@@ -10,9 +10,6 @@
 
 #include "Arduino.h"
 
-
-#include "Stream.h"
-
 #define MAX_RX_FRAME_LENGTH 64
 
 // TODO: Do the device relations really belong here?
@@ -73,7 +70,7 @@ private:
 
 	// Sende-Versuch, wird ggf. wiederholt
 	void receive();  // wird zyklisch aufgerufen
-	bool parseFrame();
+	boolean parseFrame();
 
 	void sendFrameSingle();
 	void sendFrameByte(byte);

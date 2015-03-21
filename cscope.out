@@ -1,5 +1,135 @@
-cscope 15 D:\Source\RGB-CTRL"               0000883434
-	@D:\Source\RGB-CTRL\HMW485-Lib\HBW-LC-Sw8.cpp
+cscope 15 D:\Source\RGB-CTRL"               0000890282
+	@D:\Source\RGB-CTRL\HMW\DebugStream.cpp
+
+1 
+	~"DebugSåóm.h
+"
+
+2 
+	~"°dio.h
+"
+
+4 
+	gDebugSåóm
+::
+	$DebugSåóm
+()
+
+7 
+	}
+}
+
+9 
+size_t
+ 
+DebugSåóm
+::
+	$¥öt
+(c⁄° 
+°r
+[])
+
+11 
+	`¥ötf
+(
+°r
+);
+
+13 
+	}
+}
+
+15 
+size_t
+ 
+	gDebugSåóm
+::
+	$¥öt
+(
+i
+, 
+ba£
+)
+
+17 if(
+ba£
+ =
+DEC
+Ë
+	`¥ötf
+("%d", 
+i
+);
+
+18 if(
+ba£
+ =
+HEX
+Ë
+	`¥ötf
+("%X", 
+i
+);
+
+19 
+	`¥ötf
+("nŸ im∂emíãd %d %d", 
+i
+, 
+ba£
+);
+
+21 
+	}
+}
+
+	@D:\Source\RGB-CTRL\HMW\DebugStream.h
+
+1 #i‚de‡
+DEBUGSTREAM_H_
+
+
+2 
+	#DEBUGSTREAM_H_
+
+
+	)
+
+4 
+	~"°ªam.h
+"
+
+6 ˛as†
+	cDebugSåóm
+: 
+public
+ 
+Såóm
+
+
+8 
+public
+:
+
+9 
+DebugSåóm
+();
+
+10 
+size_t
+ 
+¥öt
+(const []);
+
+11 
+size_t
+ 
+¥öt
+(, 
+DEC
+);
+
+	@D:\Source\RGB-CTRL\HMW\HMW485-Lib\HBW-LC-Sw8.cpp
 
 18 
 	#BUTTON
@@ -1045,7 +1175,7 @@ hmwrs485
 	}
 };
 
-	@D:\Source\RGB-CTRL\HMW485-Lib\HBW-LC-Sw8.h
+	@D:\Source\RGB-CTRL\HMW\HMW485-Lib\HBW-LC-Sw8.h
 
 8 #i‚de‡
 _HMWO√Wúe_H_
@@ -1077,7 +1207,7 @@ lo›
 __˝lu•lus
 
 
-	@D:\Source\RGB-CTRL\HMW485-Lib\HMWDebug.cpp
+	@D:\Source\RGB-CTRL\HMW\HMW485-Lib\HMWDebug.cpp
 
 8 
 	~"HMWDebug.h
@@ -1089,7 +1219,7 @@ Såóm
 	ghmwdebug°ªam
  = 0;
 
-	@D:\Source\RGB-CTRL\HMW485-Lib\HMWDebug.h
+	@D:\Source\RGB-CTRL\HMW\HMW485-Lib\HMWDebug.h
 
 8 #i‚de‡
 HMWDEBUG_H_
@@ -1157,25 +1287,21 @@ hmwdebug°ªam
 	}
 };
 
-	@D:\Source\RGB-CTRL\HMW485-Lib\HMWModule.cpp
+	@D:\Source\RGB-CTRL\HMW\HMW485-Lib\HMWModule.cpp
 
 11 
 	~"HMWModuÀ.h
 "
 
-13 
-	~"PrötfDebug.h
+12 
+	~"HMWDebug.h
 "
 
 14 
-	~<°dio.h
->
-
-16 
 	~<EEPROM.h
 >
 
-18 
+16 
 	gHMWModuÀ
 ::
 	$HMWModuÀ
@@ -1193,19 +1319,19 @@ byã
 _devi˚Ty≥
 ) {
 
-19 
+17 
 devi˚
  = 
 _devi˚
 ;
 
-20 
+18 
 hmwrs485
  = 
 _hmwrs485
 ;
 
-21 
+19 
 hmwrs485
 ->
 moduÀ
@@ -1213,31 +1339,31 @@ moduÀ
 this
 ;
 
-22 
+20 
 devi˚Ty≥
  = 
 _devi˚Ty≥
 ;
 
-24 
+22 
 	`ªadAddªssFromEEPROM
 ();
 
-25 
+23 
 	}
 }
 
-27 
+25 
 	gHMWModuÀ
 ::~
 	$HMWModuÀ
 () {
 
-29 
+27 
 	}
 }
 
-32 
+30 
 HMWModuÀ
 ::
 	$¥o˚ssEvít
@@ -1253,25 +1379,25 @@ boﬁón
 isBrﬂdˇ°
 ) {
 
-33 
+31 
 adrSèπ
 ;
 
-34 
+32 
 byã
  
 £ndAck
 ;
 
-41 if(
+39 if(
 isBrﬂdˇ°
 ){
 
-42 
+40 
 ‰ameD©a
 [0]){
 
-55 
+53 
 hmwrs485
 ->
 txT¨gëAddªss
@@ -1279,33 +1405,33 @@ txT¨gëAddªss
 £ndîAddªss
 ;
 
-60 
+58 
 hmwrs485
 ->
 txFømeC⁄åﬁByã
  = 0x78;
 
-62 
+60 
 £ndAck
  = 1;
 
-63 
+61 
 ‰ameD©a
 [0]){
 
-65 if(
+63 if(
 ‰ameD©a
 [1] ='a' && 
 ‰ameD©aLígth
  == 6) {
 
-67 
+65 
 byã
  
 i
  = 0; i < 4; i++)
 
-68 
+66 
 	`wrôeEEPROM
 (
 E2END
@@ -1317,61 +1443,63 @@ i
 åue
 );
 
-70 
+68 
 	`ªadAddªssFromEEPROM
 ();
 
-76 if(
+74 if(
 ‰ameD©a
 [1] == '!') { };
 
-79 
+77 
 £ndAck
  = 2;
 
-82 
+80 
 devi˚
 ->
 	`ªadC⁄fig
 ();
 
-85 
+83 
 £ndAck
  = 0;
 
-86 
+84 
 	`¥o˚ssEmesßge
 (
 ‰ameD©a
 );
 
-89 
+87 
 	`¥o˚ssEvítKey
 ();
 
-90 
+88 
 £ndAck
  = 2;
 
-94 if(
+92 if(
 ‰ameD©aLígth
  == 4) {
 
-95 
+93 
 £ndAck
  = 0;
 
-96 
-	`HMWDEBUG
-("readÉeprom");
+94 
+	`hmwdebug
+(
+	`F
+("readÉeprom"));
 
-97 
+95 
 adrSèπ
  = (()(
 ‰ameD©a
 [1]) << 8) | frameData[2];
 
-98 
+96 
 byã
  
 i
@@ -1379,7 +1507,7 @@ i
 ‰ameD©a
 [3]; i++) {
 
-99 
+97 
 hmwrs485
 ->
 txFømeD©a
@@ -1393,7 +1521,7 @@ EEPROM
 adrSèπ
  + i);
 
-101 
+99 
 hmwrs485
 ->
 txFømeD©aLígth
@@ -1401,33 +1529,35 @@ txFømeD©aLígth
 ‰ameD©a
 [3];
 
-105 
+103 
 	`¥o˚ssEvítGëLevñ
 (
 ‰ameD©a
 [1]);
 
-106 
+104 
 £ndAck
  = 2;
 
-109 if(
+107 if(
 ‰ameD©aLígth
  =
 ‰ameD©a
 [3] + 4) {
 
-110 
-	`HMWDEBUG
-("writeÉeprom");
+108 
+	`hmwdebug
+(
+	`F
+("writeÉeprom"));
 
-111 
+109 
 adrSèπ
  = (()(
 ‰ameD©a
 [1]) << 8) | frameData[2];
 
-112 
+110 
 byã
  
 i
@@ -1435,7 +1565,7 @@ i
 ‰ameD©aLígth
 ; i++){
 
-113 
+111 
 	`wrôeEEPROM
 (
 adrSèπ
@@ -1445,15 +1575,17 @@ i
 ‰ameD©a
 [i]);
 
-123 
-	`HMWDEBUG
-("Hardware Versionánd Type");
+121 
+	`hmwdebug
+(
+	`F
+("Hardware Versionánd Type"));
 
-124 
+122 
 £ndAck
  = 0;
 
-125 
+123 
 hmwrs485
 ->
 txFømeD©a
@@ -1461,7 +1593,7 @@ txFømeD©a
 devi˚Ty≥
 ;
 
-126 
+124 
 hmwrs485
 ->
 txFømeD©a
@@ -1469,17 +1601,17 @@ txFømeD©a
 MODULE_HARDWARE_VERSION
 ;
 
-127 
+125 
 hmwrs485
 ->
 txFømeD©aLígth
  = 2;
 
-130 
+128 
 	`¥o˚ssEvítSëLock
 ();
 
-133 
+131 
 	`dëîmöeSîül
 (
 hmwrs485
@@ -1487,31 +1619,33 @@ hmwrs485
 txFømeD©a
 );
 
-134 
+132 
 hmwrs485
 ->
 txFømeD©aLígth
  = 10;
 
-135 
+133 
 £ndAck
  = 0;
 
-141 
+139 
 	`¥o˚ssEvítSëLevñ
 (
 ‰ameD©a
 [1], frameData[2]);
 
-149 
-	`HMWDEBUG
-("Firmware Version");
+147 
+	`hmwdebug
+(
+	`F
+("Firmware Version"));
 
-150 
+148 
 £ndAck
  = 0;
 
-151 
+149 
 hmwrs485
 ->
 txFømeD©a
@@ -1519,7 +1653,7 @@ txFømeD©a
 MODULE_FIRMWARE_VERSION
  / 0x100;
 
-152 
+150 
 hmwrs485
 ->
 txFømeD©a
@@ -1527,75 +1661,75 @@ txFømeD©a
 MODULE_FIRMWARE_VERSION
  & 0xFF;
 
-153 
+151 
 hmwrs485
 ->
 txFømeD©aLígth
  = 2;
 
-156 
+154 
 	`¥o˚ssEvítSëLevñ
 (
 ‰ameD©a
 [1], frameData[2]);
 
-157 
+155 
 £ndAck
  = 2;
 
-161 
+159 
 	`¥o˚ssEvítKey
 ();
 
-162 
+160 
 £ndAck
  = 2;
 
-166 if(
+164 if(
 £ndAck
  == 2){
 
-168 
+166 
 hmwrs485
 ->
 txFømeD©a
 [0] = 'i';
 
-169 
+167 
 £ndAck
  = 0;
 
-171 if(
+169 if(
 £ndAck
  == 0){
 
-172 
+170 
 hmwrs485
 ->
 	`£ndFøme
 ();
 
-174 
+172 
 hmwrs485
 ->
 	`£ndAck
 ();
 
-176 
+174 
 	}
 };
 
-178 
+176 
 	gHMWModuÀ
 ::
 	$¥o˚ssEvítKey
 (){
 
-180 
+178 
 	}
 };
 
-182 
+180 
 	gHMWModuÀ
 ::
 	$¥o˚ssEvítSëLevñ
@@ -1603,11 +1737,13 @@ hmwrs485
 byã
  
 ch™√l
-, 
+, 
+uöt32_t
+ 
 Àvñ
 ){
 
-184 
+182 
 devi˚
 ->
 	`£tLevñ
@@ -1617,17 +1753,17 @@ ch™√l
 Àvñ
 );
 
-186 
+184 
 	`¥o˚ssEvítGëLevñ
 (
 ch™√l
 );
 
-187 
+185 
 	}
 };
 
-190 
+188 
 	gHMWModuÀ
 ::
 	$¥o˚ssEvítGëLevñ
@@ -1637,19 +1773,19 @@ byã
 ch™√l
 ){
 
-192 
+190 
 hmwrs485
 ->
 txFømeD©aLígth
  = 0x04;
 
-193 
+191 
 hmwrs485
 ->
 txFømeD©a
 [0] = 0x69;
 
-194 
+192 
 hmwrs485
 ->
 txFømeD©a
@@ -1657,7 +1793,7 @@ txFømeD©a
 ch™√l
 ;
 
-195 
+193 
 öfo
  = 
 devi˚
@@ -1667,7 +1803,7 @@ devi˚
 ch™√l
 );
 
-196 
+194 
 hmwrs485
 ->
 txFømeD©a
@@ -1675,7 +1811,7 @@ txFømeD©a
 öfo
  / 0x100;
 
-197 
+195 
 hmwrs485
 ->
 txFømeD©a
@@ -1683,21 +1819,21 @@ txFømeD©a
 öfo
  & 0xFF;
 
-198 
+196 
 	}
 };
 
-201 
+199 
 	gHMWModuÀ
 ::
 	$¥o˚ssEvítSëLock
 (){
 
-203 
+201 
 	}
 };
 
-206 
+204 
 	gHMWModuÀ
 ::
 	$¥o˚ssEmesßge
@@ -1707,7 +1843,7 @@ byã
 ‰ameD©a
 ) {
 
-209 
+207 
 byã
  
 blocksize
@@ -1715,7 +1851,7 @@ blocksize
 ‰ameD©a
 [3];
 
-210 
+208 
 byã
  
 blocknum
@@ -1723,7 +1859,7 @@ blocknum
 ‰ameD©a
 [4];
 
-213 
+211 
 hmwrs485
 ->
 txFømeD©aLígth
@@ -1731,7 +1867,7 @@ txFømeD©aLígth
 blocknum
  / 8;
 
-215 if(
+213 if(
 blocknum
  % 8Ë
 hmwrs485
@@ -1739,7 +1875,7 @@ hmwrs485
 txFømeD©aLígth
 ++;
 
-219 
+217 
 	`mem£t
 (
 hmwrs485
@@ -1749,13 +1885,13 @@ txFømeD©a
 txFømeD©aLígth
 );
 
-221 
+219 
 hmwrs485
 ->
 txFømeD©a
 [0] = 0x65;
 
-223 
+221 
 hmwrs485
 ->
 txFømeD©a
@@ -1763,7 +1899,7 @@ txFømeD©a
 ‰ameD©a
 [1];
 
-224 
+222 
 hmwrs485
 ->
 txFømeD©a
@@ -1771,7 +1907,7 @@ txFømeD©a
 ‰ameD©a
 [2];
 
-225 
+223 
 hmwrs485
 ->
 txFømeD©a
@@ -1779,19 +1915,19 @@ txFømeD©a
 ‰ameD©a
 [3];
 
-228 
+226 
 block
  = 0; block <
 blocknum
 ; block++) {
 
-230 
+228 
 byãIdx
  = 0; byãIdx < 
 blocksize
 ; byteIdx++) {
 
-231 if(
+229 if(
 EEPROM
 .
 	`ªad
@@ -1803,7 +1939,7 @@ blocksize
 byãIdx
 ) != 0xFF) {
 
-232 
+230 
 	`bôSë
 (
 hmwrs485
@@ -1813,11 +1949,11 @@ txFømeD©a
 block
  / 8], block % 8);
 
-237 
+235 
 	}
 };
 
-241 
+239 
 	gHMWModuÀ
 ::
 	$brﬂdˇ°A¬oun˚
@@ -1827,31 +1963,31 @@ byã
 ch™√l
 ) {
 
-242 
+240 
 hmwrs485
 ->
 txT¨gëAddªss
  = 0xFFFFFFFF;
 
-243 
+241 
 hmwrs485
 ->
 txFømeC⁄åﬁByã
  = 0xF8;
 
-244 
+242 
 hmwrs485
 ->
 txFømeD©aLígth
  = 16;
 
-245 
+243 
 hmwrs485
 ->
 txFømeD©a
 [0] = 0x41;
 
-246 
+244 
 hmwrs485
 ->
 txFømeD©a
@@ -1859,7 +1995,7 @@ txFømeD©a
 ch™√l
 ;
 
-247 
+245 
 hmwrs485
 ->
 txFømeD©a
@@ -1867,13 +2003,13 @@ txFømeD©a
 devi˚Ty≥
 ;
 
-248 
+246 
 hmwrs485
 ->
 txFømeD©a
 [3] = 0;
 
-249 
+247 
 hmwrs485
 ->
 txFømeD©a
@@ -1881,7 +2017,7 @@ txFømeD©a
 MODULE_FIRMWARE_VERSION
  / 0x100;
 
-250 
+248 
 hmwrs485
 ->
 txFømeD©a
@@ -1889,7 +2025,7 @@ txFømeD©a
 MODULE_FIRMWARE_VERSION
  & 0xFF;
 
-251 
+249 
 	`dëîmöeSîül
 (
 hmwrs485
@@ -1897,17 +2033,17 @@ hmwrs485
 txFømeD©a
  + 6);
 
-252 
+250 
 hmwrs485
 ->
 	`£ndFøme
 ();
 
-253 
+251 
 	}
 };
 
-256 
+254 
 	gHMWModuÀ
 ::
 	$brﬂdˇ°KeyEvít
@@ -1921,31 +2057,31 @@ keyPªssNum
 l⁄gPªss
 ) {
 
-257 
+255 
 hmwrs485
 ->
 txT¨gëAddªss
  = 0xFFFFFFFF;
 
-258 
+256 
 hmwrs485
 ->
 txFømeC⁄åﬁByã
  = 0xF8;
 
-259 
+257 
 hmwrs485
 ->
 txFømeD©aLígth
  = 0x04;
 
-260 
+258 
 hmwrs485
 ->
 txFømeD©a
 [0] = 0x4B;
 
-261 
+259 
 hmwrs485
 ->
 txFømeD©a
@@ -1953,13 +2089,13 @@ txFømeD©a
 ch™√l
 ;
 
-262 
+260 
 hmwrs485
 ->
 txFømeD©a
 [2] = 0;
 
-264 
+262 
 hmwrs485
 ->
 txFømeD©a
@@ -1969,17 +2105,17 @@ l⁄gPªss
 keyPªssNum
  << 2);
 
-265 
+263 
 hmwrs485
 ->
 	`£ndFøme
 ();
 
-266 
+264 
 	}
 };
 
-269 
+267 
 	gHMWModuÀ
 ::
 	$£ndInfoMesßge
@@ -1993,7 +2129,7 @@ ch™√l
 èrgë_addªss
 ) {
 
-270 
+268 
 hmwrs485
 ->
 txT¨gëAddªss
@@ -2001,25 +2137,25 @@ txT¨gëAddªss
 èrgë_addªss
 ;
 
-271 
+269 
 hmwrs485
 ->
 txFømeC⁄åﬁByã
  = 0xF8;
 
-272 
+270 
 hmwrs485
 ->
 txFømeD©aLígth
  = 0x04;
 
-273 
+271 
 hmwrs485
 ->
 txFømeD©a
 [0] = 0x69;
 
-274 
+272 
 hmwrs485
 ->
 txFømeD©a
@@ -2027,7 +2163,7 @@ txFømeD©a
 ch™√l
 ;
 
-275 
+273 
 hmwrs485
 ->
 txFømeD©a
@@ -2035,7 +2171,7 @@ txFømeD©a
 öfo
  / 0x100;
 
-276 
+274 
 hmwrs485
 ->
 txFømeD©a
@@ -2043,17 +2179,17 @@ txFømeD©a
 öfo
  & 0xFF;
 
-277 
+275 
 hmwrs485
 ->
 	`£ndFøme
 ();
 
-278 
+276 
 	}
 };
 
-281 
+279 
 	gHMWModuÀ
 ::
 	$wrôeEEPROM
@@ -2069,7 +2205,7 @@ boﬁ
 ¥ivûeged
  ) {
 
-283 if(!
+281 if(!
 ¥ivûeged
  && (
 addªss
@@ -2077,7 +2213,7 @@ addªss
 E2END
  - 4)))
 
-286 if(
+284 if(
 vÆue
  !
 EEPROM
@@ -2087,7 +2223,7 @@ EEPROM
 addªss
 ))
 
-287 
+285 
 EEPROM
 .
 	`wrôe
@@ -2097,35 +2233,35 @@ addªss
 vÆue
 );
 
-288 
+286 
 	}
 };
 
-293 
+291 
 	gHMWModuÀ
 ::
 	$ªadAddªssFromEEPROM
 (){
 
-294 
+292 
 hmwrs485
 ->
 txSídîAddªss
  = 0;
 
-295 
+293 
 byã
  
 i
  = 0; i < 4; i++){
 
-296 
+294 
 hmwrs485
 ->
 txSídîAddªss
  <<= 8;
 
-297 
+295 
 hmwrs485
 ->
 txSídîAddªss
@@ -2139,35 +2275,35 @@ E2END
 i
 );
 
-299 if(
+297 if(
 hmwrs485
 ->
 txSídîAddªss
  == 0xFFFFFFFF)
 
-300 
+298 
 hmwrs485
 ->
 txSídîAddªss
  = 0x41FFFFFF;
 
-301 
+299 
 	}
 }
 
-305 
+303 
 	gHMWModuÀ
 ::
 	$£tNewId
 (){
 
-306 i‡(
+304 i‡(
 hmwrs485
 ->
 txSídîAddªss
  == 0x42FFFFFF) {
 
-307 
+305 
 hmwrs485
 ->
 txSídîAddªss
@@ -2175,21 +2311,25 @@ txSídîAddªss
 	`mûlis
 ();
 
-308 
-	`HMWDEBUG
-("SëtögÇew ID: %lu",
+306 
+	`hmwdebug
+("SettingÇew ID:");
+
+307 
+	`hmwdebug
+(
 hmwrs485
 ->
 txSídîAddªss
 );
 
-309 
+308 
 byã
  
 i
  = 0; i < 4; i++)
 
-310 
+309 
 	`wrôeEEPROM
 (
 E2END
@@ -2203,11 +2343,11 @@ txSídîAddªss
 åue
 );
 
-312 
+311 
 	}
 }
 
-316 
+315 
 	gHMWModuÀ
 ::
 	$dëîmöeSîül
@@ -2217,11 +2357,11 @@ byã
 buf
 ) {
 
-317 
+316 
 numAsSå
 [20];
 
-318 
+317 
 	`•rötf
 (
 numAsSå
@@ -2231,19 +2371,19 @@ hmwrs485
 txSídîAddªss
  % 10000000L );
 
-319 
+318 
 buf
 [0] = 'H';
 
-320 
+319 
 buf
 [1] = 'B';
 
-321 
+320 
 buf
 [2] = 'W';
 
-322 
+321 
 	`mem˝y
 (
 buf
@@ -2251,11 +2391,11 @@ buf
 numAsSå
 , 7);
 
-323 
+322 
 	}
 };
 
-	@D:\Source\RGB-CTRL\HMW485-Lib\HMWModule.h
+	@D:\Source\RGB-CTRL\HMW\HMW485-Lib\HMWModule.h
 
 8 #i‚de‡
 HMWMODULE_H_
@@ -2301,7 +2441,9 @@ vútuÆ
 £tLevñ
 (
 byã
-,) = 0;
+,
+uöt32_t
+) = 0;
 
 24 
 vútuÆ
@@ -2437,17 +2579,19 @@ byã
 ¥o˚ssEvítKey
 ();
 
-54 
+55 
 ¥o˚ssEvítSëLevñ
 (
 byã
  
 ch™√l
-, 
+, 
+uöt32_t
+ 
 Àvñ
 );
 
-55 
+56 
 ¥o˚ssEvítGëLevñ
 (
 byã
@@ -2455,11 +2599,11 @@ byã
 ch™√l
 );
 
-56 
+57 
 ¥o˚ssEvítSëLock
 ();
 
-57 
+58 
 ¥o˚ssEmesßge
 (
 byã
@@ -2467,14 +2611,14 @@ byã
 ‰ameD©a
 );
 
-	@D:\Source\RGB-CTRL\HMW485-Lib\HMWRS485.cpp
+	@D:\Source\RGB-CTRL\HMW\HMW485-Lib\HMWRS485.cpp
 
 11 
 	~"HMWRS485.h
 "
 
-13 
-	~"PrötfDebug.h
+12 
+	~"HMWDebug.h
 "
 
 14 
@@ -2596,8 +2740,10 @@ txSídîAddªss
  ||ÅargetAddress == 0xFFFFFFFF){
 
 63 
-	`HMWDEBUG
-("parsing fromÜoop...");
+	`hmwdebug
+(
+	`F
+("parsing fromÜoop..."));
 
 64 if(
 	`∑r£Føme
@@ -2668,8 +2814,10 @@ txT¨gëAddªss
 ) {
 
 85 
-	`HMWDEBUG
-("Received ACK");
+	`hmwdebug
+(
+	`F
+("Received ACK"));
 
 86 
 ‰ameSètus
@@ -2724,13 +2872,17 @@ txFømeC⁄åﬁByã
  & 0x03) == 1)) {
 
 116 
-	`HMWDEBUG
-("Sending ACK or Broadcast");
+	`hmwdebug
+(
+	`F
+("Sending ACK or Broadcast"));
 
 117 
-	`HMWDEBUG
-("%X", 
+	`hmwdebug
+(
 txFømeC⁄åﬁByã
+,
+HEX
 );
 
 118 
@@ -2788,8 +2940,10 @@ txSídîAddªss
  = 0;
 
 140 
-	`HMWDEBUG
-("parsing fromáckwait ");
+	`hmwdebug
+(
+	`F
+("parsing fromáckwait "));
 
 141 
 	`∑r£Føme
@@ -2844,8 +2998,18 @@ txSeqNum
  << 5);
 
 177 
-	`HMWDEBUG
-("\nSending\n");
+	`hmwdebug
+(
+	`F
+("\nSending\n"));
+
+178 
+	`digôÆWrôe
+(
+txE«bÀPö
+, 
+HIGH
+);
 
 179 
 £rül
@@ -3025,6 +3189,20 @@ i
 ¸c16checksum
  & 0xFF);
 
+218 
+£rül
+->
+	`Êush
+();
+
+219 
+	`digôÆWrôe
+(
+txE«bÀPö
+, 
+LOW
+);
+
 221 
 ‰ameSètus
  |
@@ -3046,12 +3224,26 @@ byã
 ) {
 
 231 
-	`HMWDEBUG
-("%02X:",
+	`hmwdebug
+(
 £ndByã
+ >> 4, 
+HEX
 );
 
-232 if(
+232 
+	`hmwdebug
+(
+£ndByã
+ & 15, 
+HEX
+);
+
+233 
+	`hmwdebug
+(":");
+
+234 if(
 £ndByã
  =
 FRAME_START_LONG
@@ -3061,7 +3253,7 @@ FRAME_START_SHORT
 ESCAPE_CHAR
 ) {
 
-233 
+235 
 £rül
 ->
 	`wrôe
@@ -3069,11 +3261,11 @@ ESCAPE_CHAR
 ESCAPE_CHAR
 );
 
-234 
+236 
 £ndByã
  &= 0x7F;
 
-236 
+238 
 £rül
 ->
 	`wrôe
@@ -3081,33 +3273,33 @@ ESCAPE_CHAR
 £ndByã
 );
 
-237 
+239 
 	}
 };
 
-243 
+245 
 	gHMWRS485
 ::
 	$£ndAck
 () {
 
-244 
+246 
 txFømeC⁄åﬁByã
  = 0x19;
 
-245 
+247 
 txFømeD©aLígth
  = 0;
 
-246 
+248 
 	`£ndFøme
 ();
 
-247 
+249 
 	}
 };
 
-252 
+254 
 uöt16_t
  
 	gHMWRS485
@@ -3123,7 +3315,7 @@ uöt16_t
 ﬁdCrc
 ) {
 
-253 
+255 
 uöt16_t
  
 ¸c
@@ -3131,95 +3323,95 @@ uöt16_t
 ﬁdCrc
 ;
 
-254 
+256 
 byã
  
 °©
 ;
 
-256 
+258 
 byã
  
 i
  = 0; i < 8; i++) {
 
-257 i‡(
+259 i‡(
 ¸c
  & 0x8000Ë{
 °©
  = 1;}
 
-258 {
+260 {
 °©
  = 0;}
 
-259 
+261 
 ¸c
  = (crc << 1);
 
-260 i‡(
+262 i‡(
 √wByã
  & 0x80) {
 
-261 
+263 
 ¸c
  = (crc | 1);
 
-263 i‡(
+265 i‡(
 °©
 ) {
 
-264 
+266 
 ¸c
  = (¸¯^ 
 CRC16_POLYNOM
 );
 
-266 
+268 
 √wByã
  =ÇewByte << 1;
 
-268  
+270  
 ¸c
 ;
 
-269 
+271 
 	}
 }
 
-283 
+285 
 	gHMWRS485
 ::
 	$ª˚ive
 (){
 
-285 
+287 
 byã
  
 rxSèπByã
 ;
 
-286 
-rxT¨gëAddªss
-;
-
-287 
-byã
- 
-rxFømeC⁄åﬁByã
-;
-
 288 
-rxSídîAddªss
+rxT¨gëAddªss
 ;
 
 289 
 byã
  
+rxFømeC⁄åﬁByã
+;
+
+290 
+rxSídîAddªss
+;
+
+291 
+byã
+ 
 rxFømeD©aLígth
 ;
 
-290 
+292 
 byã
  
 rxFømeD©a
@@ -3227,41 +3419,41 @@ rxFømeD©a
 MAX_RX_FRAME_LENGTH
 ];
 
-292 
+294 
 byã
  
 addªssLígth
 ;
 
-293 
+295 
 byã
  
 addªssLígthL⁄g
 ;
 
-294 
+296 
 byã
  
 ‰amePoöãr
 ;
 
-295 
+297 
 byã
  
 addªssPoöãr
 ;
 
-296 
+298 
 ¸c16checksum
 ;
 
-301 
+303 
 £rül
 ->
 	`avaûabÀ
 ()) {
 
-303 
+305 
 byã
  
 rxByã
@@ -3271,19 +3463,35 @@ rxByã
 	`ªad
 ();
 
-306 if–
+308 if–
 rxByã
  =0xFD ) 
-	`HMWDEBUG
-("\nReceiving \n");
+	`hmwdebug
+(
+	`F
+("\nReceiving \n"));
 
-307 
-	`HMWDEBUG
-("%02X:",
+309 
+	`hmwdebug
+(
 rxByã
+ >> 4, 
+HEX
 );
 
-309 if(
+310 
+	`hmwdebug
+(
+rxByã
+ & 15, 
+HEX
+);
+
+311 
+	`hmwdebug
+(":");
+
+313 if(
 rxByã
  =
 ESCAPE_CHAR
@@ -3293,13 +3501,13 @@ ESCAPE_CHAR
 FRAME_ESCAPE
 )){
 
-312 
+316 
 ‰ameSètus
  |
 FRAME_ESCAPE
 ;
 
-314 if(
+318 if(
 rxByã
  =
 FRAME_START_LONG
@@ -3307,41 +3515,41 @@ FRAME_START_LONG
 FRAME_START_SHORT
 ){
 
-315 
+319 
 rxSèπByã
  = 
 rxByã
 ;
 
-316 
+320 
 ‰ameSètus
  |
 FRAME_START
 ;
 
-317 
+321 
 ‰ameSètus
  &~
 FRAME_ESCAPE
 ;
 
-319 
+323 
 ‰amePoöãr
  = 0;
 
-320 
+324 
 addªssPoöãr
  = 0;
 
-321 
+325 
 rxSídîAddªss
  = 0;
 
-322 
+326 
 rxT¨gëAddªss
  = 0;
 
-323 
+327 
 ¸c16checksum
  = 
 	`¸c16Shi·
@@ -3349,55 +3557,55 @@ rxT¨gëAddªss
 rxByã
  , 0xFFFF);
 
-324 if(
+328 if(
 rxByã
  =
 FRAME_START_LONG
 ){
 
-325 
+329 
 addªssLígth
  = 4;
 
-326 
+330 
 addªssLígthL⁄g
  = 9;
 
-328 #i‡
+332 #i‡
 ENABLE_FRAME_START_SHORT
 
 
-330 
+334 
 addªssLígth
  = 1;
 
-331 
+335 
 addªssLígthL⁄g
  = 2;
 
-335 }if(
+339 }if(
 ‰ameSètus
  & 
 FRAME_START
 ) {
 
-336 if(
+340 if(
 ‰ameSètus
  & 
 FRAME_ESCAPE
 ) {
 
-337 
+341 
 rxByã
  |= 0x80;
 
-338 
+342 
 ‰ameSètus
  &~
 FRAME_ESCAPE
 ;
 
-340 
+344 
 ¸c16checksum
  = 
 	`¸c16Shi·
@@ -3405,43 +3613,43 @@ FRAME_ESCAPE
 rxByã
  , crc16checksum);
 
-341 if(
+345 if(
 addªssPoöãr
  < 
 addªssLígth
 ){
 
-342 
+346 
 rxT¨gëAddªss
  <<= 8;
 
-343 
+347 
 rxT¨gëAddªss
  |
 rxByã
 ;
 
-344 
+348 
 addªssPoöãr
 ++;
 
-345 }if(
+349 }if(
 addªssPoöãr
  =
 addªssLígth
 ){
 
-346 
+350 
 addªssPoöãr
 ++;
 
-347 
+351 
 rxFømeC⁄åﬁByã
  = 
 rxByã
 ;
 
-348 }if–
+352 }if–
 	`bôRód
 (
 rxFømeC⁄åﬁByã
@@ -3451,35 +3659,35 @@ addªssPoöãr
 addªssLígthL⁄g
 ) {
 
-350 
+354 
 rxSídîAddªss
  <<= 8;
 
-351 
+355 
 rxSídîAddªss
  |
 rxByã
 ;
 
-352 
+356 
 addªssPoöãr
 ++;
 
-353 }if(
+357 }if(
 addªssPoöãr
  != 0xFF) {
 
-354 
+358 
 addªssPoöãr
  = 0xFF;
 
-355 
+359 
 rxFømeD©aLígth
  = 
 rxByã
 ;
 
-357 
+361 
 rxFømeD©a
 [
 ‰amePoöãr
@@ -3487,63 +3695,63 @@ rxFømeD©a
 rxByã
 ;
 
-358 
+362 
 ‰amePoöãr
 ++;
 
-359 if(
+363 if(
 ‰amePoöãr
  =
 MAX_RX_FRAME_LENGTH
 )
 
-361 if(
+365 if(
 ‰amePoöãr
  =
 rxFømeD©aLígth
 ) {
 
-362 if(
+366 if(
 ¸c16checksum
  == 0) {
 
-363 
+367 
 ‰ameSètus
  &~
 FRAME_START
 ;
 
-368 
+372 
 °¨tByã
  = 
 rxSèπByã
 ;
 
-369 
+373 
 èrgëAddªss
  = 
 rxT¨gëAddªss
 ;
 
-370 
+374 
 ‰ameC⁄åﬁByã
  = 
 rxFømeC⁄åﬁByã
 ;
 
-371 
+375 
 £ndîAddªss
  = 
 rxSídîAddªss
 ;
 
-373 
+377 
 ‰ameD©aLígth
  = 
 rxFømeD©aLígth
  - 2;
 
-374 
+378 
 	`mem˝y
 (
 ‰ameD©a
@@ -3553,27 +3761,29 @@ rxFømeD©a
 ‰ameD©aLígth
 );
 
-375 
+379 
 ‰amePoöãr
  = 0;
 
-376 
+380 
 addªssPoöãr
  = 0;
 
-378 
+382 
 ‰ameCom∂ëe
  = 1;
 
-383 
-	`HMWDEBUG
-("crcÉrror");
+387 
+	`hmwdebug
+(
+	`F
+("crcÉrror"));
 
-390 
+394 
 	}
 }
 
-	@D:\Source\RGB-CTRL\HMW485-Lib\HMWRS485.h
+	@D:\Source\RGB-CTRL\HMW\HMW485-Lib\HMWRS485.h
 
 8 #i‚de‡
 HMWRS485_H_
@@ -3589,25 +3799,21 @@ HMWRS485_H_
 	~"Arduöo.h
 "
 
-14 
-	~"Såóm.h
-"
-
-16 
+13 
 	#MAX_RX_FRAME_LENGTH
  64
 
 	)
 
-23 ˛as†
+20 ˛as†
 	cHMWModuÀBa£
  {
 
-24 
+21 
 	mpublic
 :
 
-28 
+25 
 vútuÆ
  
 ¥o˚ssEvít
@@ -3625,15 +3831,15 @@ isBrﬂdˇ°
 Ál£
 ) = 0;
 
-32 ˛as†
+29 ˛as†
 	cHMWRS485
  {
 
-33 
+30 
 	mpublic
 :
 
-34 
+31 
 HMWRS485
 (
 Såóm
@@ -3641,55 +3847,55 @@ Såóm
 byã
 );
 
-35 
+32 
 	mvútuÆ
  ~
 HMWRS485
 ();
 
-37 
+34 
 lo›
 ();
 
-40 
+37 
 £ndFøme
 ();
 
-41 
+38 
 £ndAck
 ();
 
-45 
+42 
 HMWModuÀBa£
 * 
 	mmoduÀ
 ;
 
-49 
+46 
 	m£ndîAddªss
 ;
 
-52 
+49 
 	mtxSídîAddªss
 ;
 
-53 
+50 
 	mtxT¨gëAddªss
 ;
 
-54 
+51 
 byã
  
 	mtxFømeC⁄åﬁByã
 ;
 
-55 
+52 
 byã
  
 	mtxFømeD©aLígth
 ;
 
-56 
+53 
 byã
  
 	mtxFømeD©a
@@ -3697,45 +3903,45 @@ byã
 MAX_RX_FRAME_LENGTH
 ];
 
-58 
+55 
 	m¥iv©e
 :
 
-60 
+57 
 Såóm
 * 
 £rül
 ;
 
-62 
+59 
 byã
  
 	mtxE«bÀPö
 ;
 
-64 
+61 
 byã
  
 	m‰ameSètus
 ;
 
-67 
+64 
 byã
  
 	m‰ameCom∂ëe
 ;
 
-68 
+65 
 	mèrgëAddªss
 ;
 
-69 
+66 
 byã
  
 	m‰ameD©aLígth
 ;
 
-70 
+67 
 byã
  
 	m‰ameD©a
@@ -3743,39 +3949,39 @@ byã
 MAX_RX_FRAME_LENGTH
 ];
 
-71 
+68 
 byã
  
 	m°¨tByã
 ;
 
-72 
+69 
 byã
  
 	m‰ameC⁄åﬁByã
 ;
 
-75 
+72 
 ª˚ive
 ();
 
-76 
-boﬁ
+73 
+boﬁón
  
 ∑r£Føme
 ();
 
-78 
+75 
 £ndFømeSögÀ
 ();
 
-79 
+76 
 £ndFømeByã
 (
 byã
 );
 
-80 
+77 
 uöt16_t
  
 ¸c16Shi·
@@ -3783,7 +3989,7 @@ uöt16_t
 byã
 , uint16_t);
 
-	@D:\Source\RGB-CTRL\HMW485-Lib\HMWRegister.h
+	@D:\Source\RGB-CTRL\HMW\HMW485-Lib\HMWRegister.h
 
 8 #i‚de‡
 HMWREGISTER_H_
@@ -3857,7 +4063,7 @@ hmw_c⁄fig_swôch
 HMW_CONFIG_NUM_SWITCHES
 ];
 
-	@D:\Source\RGB-CTRL\HMW485-Lib\HMWWrapper.cpp
+	@D:\Source\RGB-CTRL\HMW\HMWWrapper.cpp
 
 1 
 	~"HMWWøµî.h
@@ -3872,14 +4078,18 @@ HMW_CONFIG_NUM_SWITCHES
 "
 
 4 
-	~"rs485Såóm.h
+	~"HMWDebug.h
 "
 
 5 
+	~"rs485Såóm.h
+"
+
+6 
 	~"rs485.h
 "
 
-8 ˛as†
+9 ˛as†
 	cHMWDevi˚
  : 
 public
@@ -3887,21 +4097,23 @@ public
 HMWDevi˚Ba£
  {
 
-9 
+10 
 public
 :
 
-11 
+12 
 	$£tLevñ
 (
 byã
  
 ch™√l
-,
+,
+uöt32_t
+ 
 Àvñ
 ) {
 
-17 
+18 
 	$gëLevñ
 (
 byã
@@ -3909,45 +4121,53 @@ byã
 ch™√l
 ) {
 
-19 
+20 
 	}
 };
 
-23 
+24 
 	$ªadC⁄fig
 (){
 
-26 
+27 
 	}
 };
 
-30 
+31 
 HMWDevi˚
  
 	ghmwdevi˚
 ;
 
-31 
+32 
 HMWRS485
 * 
 	ghmwrs485
 ;
 
-32 
+33 
 HMWModuÀ
 * 
 	ghmwmoduÀ
 ;
 
-35 
+37 
 	$Inô_HMW
 (){
 
-36 
+38 
 	`rs485Inô
 ();
 
-38 
+40 
+hmwdebug°ªam
+ = 
+√w
+ 
+	`DebugSåóm
+();
+
+42 
 hmwrs485
  = 
 √w
@@ -3957,7 +4177,7 @@ hmwrs485
 RS485Såóm
 , 0);
 
-39 
+43 
 hmwmoduÀ
  = 
 √w
@@ -3967,47 +4187,47 @@ hmwmoduÀ
 hmwdevi˚
 , 
 hmwrs485
-, 0x83);
+, 0xA0);
 
-42 
+46 
 hmwmoduÀ
 ->
 	`brﬂdˇ°A¬oun˚
 (0);
-
-45 
-	}
-}
-
-47 
-	$HMW_lo›
-(){
-
-48 
-hmwrs485
-->
-	`lo›
-();
 
 49 
 	}
 }
 
 51 
+	$HMW_lo›
+(){
+
+52 
+hmwrs485
+->
+	`lo›
+();
+
+53 
+	}
+}
+
+55 
 	$HMWbrﬂdˇ°
 ()
 
-53 
+57 
 hmwmoduÀ
 ->
 	`brﬂdˇ°A¬oun˚
 (0);
 
-55 
+59 
 	}
 }
 
-	@D:\Source\RGB-CTRL\HMW485-Lib\HMWWrapper.h
+	@D:\Source\RGB-CTRL\HMW\HMWWrapper.h
 
 1 #i‚de‡
 __HMWWRAPPER_H__
@@ -4057,7 +4277,1423 @@ HMWbrﬂdˇ°
 EXTERNC
 
 
-	@D:\Source\RGB-CTRL\HMW485-Lib\PrintfDebug.h
+	@D:\Source\RGB-CTRL\HMW\Print.cpp
+
+22 
+	~<°dlib.h
+>
+
+23 
+	~<°dio.h
+>
+
+24 
+	~<°rög.h
+>
+
+25 
+	~<m©h.h
+>
+
+26 
+	~"Arduöo.h
+"
+
+28 
+	~"Pröt.h
+"
+
+33 
+size_t
+ 
+	gPröt
+::
+	$wrôe
+(c⁄° 
+uöt8_t
+ *
+buf„r
+, 
+size_t
+ 
+size
+)
+
+35 
+size_t
+ 
+n
+ = 0;
+
+36 
+size
+--) {
+
+37 
+n
+ +
+	`wrôe
+(*
+buf„r
+++);
+
+39  
+n
+;
+
+40 
+	}
+}
+
+42 
+size_t
+ 
+	gPröt
+::
+	$¥öt
+(c⁄° 
+Såög
+ &
+s
+)
+
+44  
+	`wrôe
+(
+s
+.
+	`c_°r
+(), s.
+	`Àngth
+());
+
+45 
+	}
+}
+
+47 
+size_t
+ 
+	gPröt
+::
+	$¥öt
+(c⁄° 
+°r
+[])
+
+49  
+	`wrôe
+(
+°r
+);
+
+50 
+	}
+}
+
+52 
+size_t
+ 
+	gPröt
+::
+	$¥öt
+(
+c
+)
+
+54  
+	`wrôe
+(
+c
+);
+
+55 
+	}
+}
+
+57 
+size_t
+ 
+	gPröt
+::
+	$¥öt
+(
+b
+, 
+ba£
+)
+
+59  
+	`¥öt
+((Ë
+b
+, 
+ba£
+);
+
+60 
+	}
+}
+
+62 
+size_t
+ 
+	gPröt
+::
+	$¥öt
+(
+n
+, 
+ba£
+)
+
+64  
+	`¥öt
+((Ë
+n
+, 
+ba£
+);
+
+65 
+	}
+}
+
+67 
+size_t
+ 
+	gPröt
+::
+	$¥öt
+(
+n
+, 
+ba£
+)
+
+69  
+	`¥öt
+((Ë
+n
+, 
+ba£
+);
+
+70 
+	}
+}
+
+72 
+size_t
+ 
+	gPröt
+::
+	$¥öt
+(
+n
+, 
+ba£
+)
+
+74 i‡(
+ba£
+ == 0) {
+
+75  
+	`wrôe
+(
+n
+);
+
+76 } i‡(
+ba£
+ == 10) {
+
+77 i‡(
+n
+ < 0) {
+
+78 
+t
+ = 
+	`¥öt
+('-');
+
+79 
+n
+ = -n;
+
+80  
+	`¥ötNumbî
+(
+n
+, 10Ë+ 
+t
+;
+
+82  
+	`¥ötNumbî
+(
+n
+, 10);
+
+84  
+	`¥ötNumbî
+(
+n
+, 
+ba£
+);
+
+86 
+	}
+}
+
+88 
+size_t
+ 
+	gPröt
+::
+	$¥öt
+(
+n
+, 
+ba£
+)
+
+90 i‡(
+ba£
+ =0Ë 
+	`wrôe
+(
+n
+);
+
+91  
+	`¥ötNumbî
+(
+n
+, 
+ba£
+);
+
+92 
+	}
+}
+
+94 
+size_t
+ 
+	gPröt
+::
+	$¥öt
+(
+n
+, 
+digôs
+)
+
+96  
+	`¥ötFlﬂt
+(
+n
+, 
+digôs
+);
+
+97 
+	}
+}
+
+99 
+size_t
+ 
+	gPröt
+::
+	$¥öén
+(c⁄° 
+__FœshSåögHñ≥r
+ *
+ifsh
+)
+
+101 
+size_t
+ 
+n
+ = 
+	`¥öt
+(
+ifsh
+);
+
+102 
+n
+ +
+	`¥öén
+();
+
+103  
+n
+;
+
+104 
+	}
+}
+
+106 
+size_t
+ 
+	gPröt
+::
+	$¥öt
+(c⁄° 
+PröèbÀ
+& 
+x
+)
+
+108  
+x
+.
+	`¥ötTo
+(*
+this
+);
+
+109 
+	}
+}
+
+111 
+size_t
+ 
+	gPröt
+::
+	$¥öén
+()
+
+113 
+size_t
+ 
+n
+ = 
+	`¥öt
+('\r');
+
+114 
+n
+ +
+	`¥öt
+('\n');
+
+115  
+n
+;
+
+116 
+	}
+}
+
+118 
+size_t
+ 
+	gPröt
+::
+	$¥öén
+(c⁄° 
+Såög
+ &
+s
+)
+
+120 
+size_t
+ 
+n
+ = 
+	`¥öt
+(
+s
+);
+
+121 
+n
+ +
+	`¥öén
+();
+
+122  
+n
+;
+
+123 
+	}
+}
+
+125 
+size_t
+ 
+	gPröt
+::
+	$¥öén
+(c⁄° 
+c
+[])
+
+127 
+size_t
+ 
+n
+ = 
+	`¥öt
+(
+c
+);
+
+128 
+n
+ +
+	`¥öén
+();
+
+129  
+n
+;
+
+130 
+	}
+}
+
+132 
+size_t
+ 
+	gPröt
+::
+	$¥öén
+(
+c
+)
+
+134 
+size_t
+ 
+n
+ = 
+	`¥öt
+(
+c
+);
+
+135 
+n
+ +
+	`¥öén
+();
+
+136  
+n
+;
+
+137 
+	}
+}
+
+139 
+size_t
+ 
+	gPröt
+::
+	$¥öén
+(
+b
+, 
+ba£
+)
+
+141 
+size_t
+ 
+n
+ = 
+	`¥öt
+(
+b
+, 
+ba£
+);
+
+142 
+n
+ +
+	`¥öén
+();
+
+143  
+n
+;
+
+144 
+	}
+}
+
+146 
+size_t
+ 
+	gPröt
+::
+	$¥öén
+(
+num
+, 
+ba£
+)
+
+148 
+size_t
+ 
+n
+ = 
+	`¥öt
+(
+num
+, 
+ba£
+);
+
+149 
+n
+ +
+	`¥öén
+();
+
+150  
+n
+;
+
+151 
+	}
+}
+
+153 
+size_t
+ 
+	gPröt
+::
+	$¥öén
+(
+num
+, 
+ba£
+)
+
+155 
+size_t
+ 
+n
+ = 
+	`¥öt
+(
+num
+, 
+ba£
+);
+
+156 
+n
+ +
+	`¥öén
+();
+
+157  
+n
+;
+
+158 
+	}
+}
+
+160 
+size_t
+ 
+	gPröt
+::
+	$¥öén
+(
+num
+, 
+ba£
+)
+
+162 
+size_t
+ 
+n
+ = 
+	`¥öt
+(
+num
+, 
+ba£
+);
+
+163 
+n
+ +
+	`¥öén
+();
+
+164  
+n
+;
+
+165 
+	}
+}
+
+167 
+size_t
+ 
+	gPröt
+::
+	$¥öén
+(
+num
+, 
+ba£
+)
+
+169 
+size_t
+ 
+n
+ = 
+	`¥öt
+(
+num
+, 
+ba£
+);
+
+170 
+n
+ +
+	`¥öén
+();
+
+171  
+n
+;
+
+172 
+	}
+}
+
+174 
+size_t
+ 
+	gPröt
+::
+	$¥öén
+(
+num
+, 
+digôs
+)
+
+176 
+size_t
+ 
+n
+ = 
+	`¥öt
+(
+num
+, 
+digôs
+);
+
+177 
+n
+ +
+	`¥öén
+();
+
+178  
+n
+;
+
+179 
+	}
+}
+
+181 
+size_t
+ 
+	gPröt
+::
+	$¥öén
+(c⁄° 
+PröèbÀ
+& 
+x
+)
+
+183 
+size_t
+ 
+n
+ = 
+	`¥öt
+(
+x
+);
+
+184 
+n
+ +
+	`¥öén
+();
+
+185  
+n
+;
+
+186 
+	}
+}
+
+190 
+size_t
+ 
+	gPröt
+::
+	$¥ötNumbî
+(
+n
+, 
+uöt8_t
+ 
+ba£
+) {
+
+191 
+buf
+[8 * () + 1];
+
+192 *
+°r
+ = &
+buf
+[(buf) - 1];
+
+194 *
+°r
+ = '\0';
+
+197 i‡(
+ba£
+ < 2) base = 10;
+
+200 
+m
+ = 
+n
+;
+
+201 
+n
+ /
+ba£
+;
+
+202 
+c
+ = 
+m
+ - 
+ba£
+ * 
+n
+;
+
+203 *--
+°r
+ = 
+c
+ < 10 ? c + '0' : c + 'A' - 10;
+
+204 } 
+n
+);
+
+206  
+	`wrôe
+(
+°r
+);
+
+207 
+	}
+}
+
+209 
+size_t
+ 
+	gPröt
+::
+	$¥ötFlﬂt
+(
+numbî
+, 
+uöt8_t
+ 
+digôs
+)
+
+211 
+size_t
+ 
+n
+ = 0;
+
+213 i‡(
+	`i¢™
+(
+numbî
+)Ë 
+	`¥öt
+("nan");
+
+214 i‡(
+	`isöf
+(
+numbî
+)Ë 
+	`¥öt
+("inf");
+
+215 i‡(
+numbî
+ > 4294967040.0Ë 
+	`¥öt
+ ("ovf");
+
+216 i‡(
+numbî
+ <-4294967040.0Ë 
+	`¥öt
+ ("ovf");
+
+219 i‡(
+numbî
+ < 0.0)
+
+221 
+n
+ +
+	`¥öt
+('-');
+
+222 
+numbî
+ = -number;
+
+226 
+roundög
+ = 0.5;
+
+227 
+uöt8_t
+ 
+i
+=0; i<
+digôs
+; ++i)
+
+228 
+roundög
+ /= 10.0;
+
+230 
+numbî
+ +
+roundög
+;
+
+233 
+öt_∑π
+ = ()
+numbî
+;
+
+234 
+ªmaödî
+ = 
+numbî
+ - ()
+öt_∑π
+;
+
+235 
+n
+ +
+	`¥öt
+(
+öt_∑π
+);
+
+238 i‡(
+digôs
+ > 0) {
+
+239 
+n
+ +
+	`¥öt
+(".");
+
+243 
+digôs
+-- > 0)
+
+245 
+ªmaödî
+ *= 10.0;
+
+246 
+toPröt
+ = (
+ªmaödî
+);
+
+247 
+n
+ +
+	`¥öt
+(
+toPröt
+);
+
+248 
+ªmaödî
+ -
+toPröt
+;
+
+251  
+n
+;
+
+252 
+	}
+}
+
+	@D:\Source\RGB-CTRL\HMW\Print.h
+
+20 #i‚de‡
+Pröt_h
+
+
+21 
+	#Pröt_h
+
+
+	)
+
+23 
+	~<öây≥s.h
+>
+
+24 
+	~<°dio.h
+>
+
+26 
+	~"WSåög.h
+"
+
+27 
+	~"PröèbÀ.h
+"
+
+29 
+	#DEC
+ 10
+
+	)
+
+30 
+	#HEX
+ 16
+
+	)
+
+31 
+	#OCT
+ 8
+
+	)
+
+32 
+	#BIN
+ 2
+
+	)
+
+34 ˛as†
+	cPröt
+
+
+36 
+	m¥iv©e
+:
+
+37 
+wrôe_îr‹
+;
+
+38 
+size_t
+ 
+¥ötNumbî
+(, 
+uöt8_t
+);
+
+39 
+size_t
+ 
+¥ötFlﬂt
+(, 
+uöt8_t
+);
+
+40 
+	m¥Ÿe˘ed
+:
+
+41 
+	$£tWrôeEº‹
+(
+îr
+ = 1Ë{ 
+wrôe_îr‹
+ =Érr; }
+
+42 
+public
+:
+
+43 
+	$Pröt
+(Ë: 
+	$wrôe_îr‹
+(0Ë{
+	}
+}
+
+45 
+	$gëWrôeEº‹
+(Ë{  
+wrôe_îr‹
+; 
+	}
+}
+
+46 
+	$˛órWrôeEº‹
+(Ë{ 
+	`£tWrôeEº‹
+(0); 
+	}
+}
+
+48 
+vútuÆ
+ 
+size_t
+ 
+wrôe
+(
+uöt8_t
+) = 0;
+
+49 
+size_t
+ 
+	$wrôe
+(c⁄° *
+°r
+) {
+
+50 i‡(
+°r
+ =
+NULL
+)  0;
+
+51  
+	`wrôe
+((c⁄° 
+uöt8_t
+ *)
+°r
+, 
+	`°æí
+(str));
+
+52 
+	}
+}
+
+53 
+vútuÆ
+ 
+size_t
+ 
+wrôe
+(c⁄° 
+uöt8_t
+ *
+buf„r
+, size_à
+size
+);
+
+54 
+size_t
+ 
+	$wrôe
+(c⁄° *
+buf„r
+, 
+size_t
+ 
+size
+) {
+
+55  
+	`wrôe
+((c⁄° 
+uöt8_t
+ *)
+buf„r
+, 
+size
+);
+
+56 
+	}
+}
+
+58 
+size_t
+ 
+¥öt
+(c⁄° 
+Såög
+ &);
+
+59 
+size_t
+ 
+¥öt
+(const []);
+
+60 
+size_t
+ 
+¥öt
+();
+
+61 
+size_t
+ 
+¥öt
+(, 
+DEC
+);
+
+62 
+size_t
+ 
+¥öt
+(, 
+DEC
+);
+
+63 
+size_t
+ 
+¥öt
+(, 
+DEC
+);
+
+64 
+size_t
+ 
+¥öt
+(, 
+DEC
+);
+
+65 
+size_t
+ 
+¥öt
+(, 
+DEC
+);
+
+66 
+size_t
+ 
+¥öt
+(, = 2);
+
+67 
+size_t
+ 
+¥öt
+(c⁄° 
+PröèbÀ
+&);
+
+69 
+size_t
+ 
+¥öén
+(c⁄° 
+__FœshSåögHñ≥r
+ *);
+
+70 
+size_t
+ 
+¥öén
+(c⁄° 
+Såög
+ &
+s
+);
+
+71 
+size_t
+ 
+¥öén
+(const []);
+
+72 
+size_t
+ 
+¥öén
+();
+
+73 
+size_t
+ 
+¥öén
+(, 
+DEC
+);
+
+74 
+size_t
+ 
+¥öén
+(, 
+DEC
+);
+
+75 
+size_t
+ 
+¥öén
+(, 
+DEC
+);
+
+76 
+size_t
+ 
+¥öén
+(, 
+DEC
+);
+
+77 
+size_t
+ 
+¥öén
+(, 
+DEC
+);
+
+78 
+size_t
+ 
+¥öén
+(, = 2);
+
+79 
+size_t
+ 
+¥öén
+(c⁄° 
+PröèbÀ
+&);
+
+80 
+size_t
+ 
+¥öén
+();
+
+	@D:\Source\RGB-CTRL\HMW\Printable.h
+
+20 #i‚de‡
+PröèbÀ_h
+
+
+21 
+	#PröèbÀ_h
+
+
+	)
+
+23 
+	~<°dlib.h
+>
+
+25 
+˛ass
+ 
+	gPröt
+;
+
+33 ˛as†
+	cPröèbÀ
+
+
+35 
+	mpublic
+:
+
+36 
+vútuÆ
+ 
+size_t
+ 
+	$¥ötTo
+(
+Pröt
+& 
+p
+) const = 0;
+
+	@D:\Source\RGB-CTRL\HMW\PrintfDebug.h
 
 1 
 	#DEBUG_HMW
@@ -4089,7 +5725,7 @@ __VA_ARGS__
 
 	)
 
-	@D:\Source\RGB-CTRL\HMW485-Lib\Stream.h
+	@D:\Source\RGB-CTRL\HMW\Stream.h
 
 1 #i‚de‡
 __STREAM_H__
@@ -4109,15 +5745,39 @@ __STREAM_H__
 	~<°döt.h
 >
 
-7 ˛as†
+7 
+	#DEC
+ 10
+
+	)
+
+8 
+	#HEX
+ 16
+
+	)
+
+9 
+	#OCT
+ 8
+
+	)
+
+10 
+	#BIN
+ 2
+
+	)
+
+12 ˛as†
 	cSåóm
  {
 
-8 
+13 
 	mpublic
 :
 
-13 
+18 
 vútuÆ
  
 size_t
@@ -4129,53 +5789,91 @@ uöt8_t
 c
 ) =0;
 
-14 
+19 
 vútuÆ
  
 ªad
 () =0;
 
-21 
+26 
 vútuÆ
  
 avaûabÀ
 () =0;
 
-	@D:\Source\RGB-CTRL\HMW485-Lib\arduino.h
+27 
+vútuÆ
+ 
+Êush
+();
 
-3 
+29 
+vútuÆ
+ 
+size_t
+ 
+¥öt
+(const []);
+
+30 
+vútuÆ
+ 
+size_t
+ 
+¥öt
+(, 
+DEC
+);
+
+	@D:\Source\RGB-CTRL\HMW\arduino.h
+
+1 #i‚de‡
+ARDUINO_H
+
+
+2 
+	#ARDUINO_H
+
+
+	)
+
+5 
 	~<°dboﬁ.h
 >
 
-4 
+6 
 	~<°döt.h
 >
 
-5 
+7 
 	~<Såög.h
 >
 
-6 
+8 
+	~<°dio.h
+>
+
+9 
 	~"Såóm.h
 "
 
-7 
+10 
 	~"Arduöo-EEPROM.h
 "
 
-9 
+12 
 boﬁ
  
 	tboﬁón
 ;
 
-10 
+13 
 uöt8_t
  
 	tbyã
 ;
 
-13 
+16 
 	#bôRód
 (
 vÆue
@@ -4185,7 +5883,7 @@ bô
 
 	)
 
-14 
+17 
 	#bôSë
 (
 vÆue
@@ -4195,11 +5893,11 @@ bô
 
 	)
 
-16 
+19 
 sy°ime
 ;
 
-17 
+20 
 	#mûlis
 (Ë
 sy°ime
@@ -4207,83 +5905,175 @@ sy°ime
 
 	)
 
-	@D:\Source\RGB-CTRL\RS485\HM485.c
+23 
+	#digôÆWrôe
+(...)
+
+	)
+
+25 
+	#F
+(
+vÆ
+Ë(vÆ)
+
+	)
+
+	@D:\Source\RGB-CTRL\HMW\rs485Stream.cpp
 
 1 
-	~"HM485.h
+	~"rs485Såóm.h
 "
 
-	@D:\Source\RGB-CTRL\RS485\HM485.h
+2 
+	~"rs485.h
+"
+
+4 
+size_t
+ 
+	gRS485SåómCœss
+::
+	$wrôe
+(
+uöt8_t
+ 
+c
+){
+
+6 
+	`rs485Wrôe
+((*)&
+c
+, 1)!=1)
+
+12 
+	}
+}
+
+14 
+	gRS485SåómCœss
+::
+	$ªad
+(){
+
+15 
+buf„r
+;
+
+16 
+ªt
+ = 
+	`rs485Ród
+((*Ë&
+buf„r
+, 1);
+
+17 if(
+ªt
+ != 1)
+
+19 
+buf„r
+ = -1;
+
+21  
+buf„r
+;
+
+22 
+	}
+}
+
+24 
+	gRS485SåómCœss
+::
+	$avaûabÀ
+(){
+
+25  
+	`rs485ByãsAvaûabÀ
+();
+
+26 
+	}
+}
+
+28 
+	gRS485SåómCœss
+::
+	$Êush
+()
+
+31 
+	}
+}
+
+33 
+RS485SåómCœss
+ 
+RS485Såóm
+;
+
+	@D:\Source\RGB-CTRL\HMW\rs485Stream.h
 
 1 #i‚de‡
-__HM485_H__
+__RS485STREAM_H__
 
 
 2 
-	#__HM485_H__
+	#__RS485STREAM_H__
 
 
 	)
 
-7 
-	#FRAME_START_SHORT
- 0xFE
+4 
+	~"Såóm.h
+"
 
-	)
+5 
+	~<°döt.h
+>
 
-8 
-	#FRAME_START_LONG
- 0xFD
+8 ˛as†
+	cRS485SåómCœss
+ : 
+public
+ 
+Såóm
 
-	)
 
-9 
-	#ESCAPE_CHAR
- 0xFC
+10 
+public
+:
 
-	)
+11 
+size_t
+ 
+wrôe
+(
+uöt8_t
+ 
+c
+);
 
-12 
-	#CMD_SEND
- 0x53
+12 
+ªad
+();
 
-	)
+13 
+avaûabÀ
+();
 
-13 
-	#CMD_DISCOVERY
- 0x44
+14 
+Êush
+();
 
-	)
-
-15 
-	#CMD_RESPONSE
- 0x72
-
-	)
-
-16 
-	#CMD_ERROR
- 0x61
-
-	)
-
-17 
-	#CMD_EVENT
- 0x65
-
-	)
-
-18 
-	#CMD_DISCOVERY_RESULT
- 0x64
-
-	)
-
-19 
-	#CMD_DISCOVERY_END
- 0x63
-
-	)
+17 
+RS485SåómCœss
+ 
+RS485Såóm
+;
 
 	@D:\Source\RGB-CTRL\RS485\rs485.c
 
@@ -5516,148 +7306,6 @@ rs485ByãsAvaûabÀ
 21 #unde‡
 EXTERNC
 
-
-	@D:\Source\RGB-CTRL\RS485\rs485Stream.cpp
-
-1 
-	~"rs485Såóm.h
-"
-
-2 
-	~"rs485.h
-"
-
-4 
-size_t
- 
-	gRS485SåómCœss
-::
-	$wrôe
-(
-uöt8_t
- 
-c
-){
-
-6 
-	`rs485Wrôe
-((*)&
-c
-, 1)!=1)
-
-12 
-	}
-}
-
-14 
-	gRS485SåómCœss
-::
-	$ªad
-(){
-
-15 
-buf„r
-;
-
-16 
-ªt
- = 
-	`rs485Ród
-((*Ë&
-buf„r
-, 1);
-
-17 if(
-ªt
- != 1)
-
-19 
-buf„r
- = -1;
-
-21  
-buf„r
-;
-
-22 
-	}
-}
-
-24 
-	gRS485SåómCœss
-::
-	$avaûabÀ
-(){
-
-25  
-	`rs485ByãsAvaûabÀ
-();
-
-26 
-	}
-}
-
-28 
-RS485SåómCœss
- 
-	gRS485Såóm
-;
-
-	@D:\Source\RGB-CTRL\RS485\rs485Stream.h
-
-1 #i‚de‡
-__RS485STREAM_H__
-
-
-2 
-	#__RS485STREAM_H__
-
-
-	)
-
-4 
-	~"Såóm.h
-"
-
-5 
-	~<°döt.h
->
-
-8 ˛as†
-	cRS485SåómCœss
- : 
-public
- 
-Såóm
-
-
-10 
-public
-:
-
-11 
-size_t
- 
-wrôe
-(
-uöt8_t
- 
-c
-);
-
-12 
-ªad
-();
-
-13 
-avaûabÀ
-();
-
-17 
-RS485SåómCœss
- 
-RS485Såóm
-;
 
 	@D:\Source\RGB-CTRL\SPL\inc\misc.h
 
@@ -137881,28 +139529,31 @@ __HópLimô
 1
 .
 0
-84
-3479
-D:\Source\RGB-CTRL\HMW485-Lib\HBW-LC-Sw8.cpp
-D:\Source\RGB-CTRL\HMW485-Lib\HBW-LC-Sw8.h
-D:\Source\RGB-CTRL\HMW485-Lib\HMWDebug.cpp
-D:\Source\RGB-CTRL\HMW485-Lib\HMWDebug.h
-D:\Source\RGB-CTRL\HMW485-Lib\HMWModule.cpp
-D:\Source\RGB-CTRL\HMW485-Lib\HMWModule.h
-D:\Source\RGB-CTRL\HMW485-Lib\HMWRS485.cpp
-D:\Source\RGB-CTRL\HMW485-Lib\HMWRS485.h
-D:\Source\RGB-CTRL\HMW485-Lib\HMWRegister.h
-D:\Source\RGB-CTRL\HMW485-Lib\HMWWrapper.cpp
-D:\Source\RGB-CTRL\HMW485-Lib\HMWWrapper.h
-D:\Source\RGB-CTRL\HMW485-Lib\PrintfDebug.h
-D:\Source\RGB-CTRL\HMW485-Lib\Stream.h
-D:\Source\RGB-CTRL\HMW485-Lib\arduino.h
-D:\Source\RGB-CTRL\RS485\HM485.c
-D:\Source\RGB-CTRL\RS485\HM485.h
+87
+3585
+D:\Source\RGB-CTRL\HMW\DebugStream.cpp
+D:\Source\RGB-CTRL\HMW\DebugStream.h
+D:\Source\RGB-CTRL\HMW\HMW485-Lib\HBW-LC-Sw8.cpp
+D:\Source\RGB-CTRL\HMW\HMW485-Lib\HBW-LC-Sw8.h
+D:\Source\RGB-CTRL\HMW\HMW485-Lib\HMWDebug.cpp
+D:\Source\RGB-CTRL\HMW\HMW485-Lib\HMWDebug.h
+D:\Source\RGB-CTRL\HMW\HMW485-Lib\HMWModule.cpp
+D:\Source\RGB-CTRL\HMW\HMW485-Lib\HMWModule.h
+D:\Source\RGB-CTRL\HMW\HMW485-Lib\HMWRS485.cpp
+D:\Source\RGB-CTRL\HMW\HMW485-Lib\HMWRS485.h
+D:\Source\RGB-CTRL\HMW\HMW485-Lib\HMWRegister.h
+D:\Source\RGB-CTRL\HMW\HMWWrapper.cpp
+D:\Source\RGB-CTRL\HMW\HMWWrapper.h
+D:\Source\RGB-CTRL\HMW\Print.cpp
+D:\Source\RGB-CTRL\HMW\Print.h
+D:\Source\RGB-CTRL\HMW\Printable.h
+D:\Source\RGB-CTRL\HMW\PrintfDebug.h
+D:\Source\RGB-CTRL\HMW\Stream.h
+D:\Source\RGB-CTRL\HMW\arduino.h
+D:\Source\RGB-CTRL\HMW\rs485Stream.cpp
+D:\Source\RGB-CTRL\HMW\rs485Stream.h
 D:\Source\RGB-CTRL\RS485\rs485.c
 D:\Source\RGB-CTRL\RS485\rs485.h
-D:\Source\RGB-CTRL\RS485\rs485Stream.cpp
-D:\Source\RGB-CTRL\RS485\rs485Stream.h
 D:\Source\RGB-CTRL\SPL\inc\misc.h
 D:\Source\RGB-CTRL\SPL\inc\stm32f10x_adc.h
 D:\Source\RGB-CTRL\SPL\inc\stm32f10x_bkp.h

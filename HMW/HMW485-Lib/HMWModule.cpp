@@ -9,9 +9,7 @@
  */
 
 #include "HMWModule.h"
-//#include "HMWDebug.h"
-#include "PrintfDebug.h"
-#include <stdio.h>
+#include "HMWDebug.h"
 
 #include <EEPROM.h>
 
@@ -93,7 +91,7 @@ void HMWModule::processEvent(byte const * const frameData, byte frameDataLength,
         	// TODO: Check requested length...
             if(frameDataLength == 4) {                                // Length of before incoming data must be 4
                sendAck = 0;
-               HMWDEBUG("read eeprom");
+               hmwdebug(F("read eeprom"));
                adrStart = ((unsigned int)(frameData[1]) << 8) | frameData[2];  // start adress of eeprom
                for(byte i = 0; i < frameData[3]; i++) {
             	   hmwrs485->txFrameData[i] = EEPROM.read(adrStart + i);
@@ -107,7 +105,7 @@ void HMWModule::processEvent(byte const * const frameData, byte frameDataLength,
             break;
          case 'W':                                                               // Write EEPROM
             if(frameDataLength == frameData[3] + 4) {
-            	HMWDEBUG("write eeprom");
+            	hmwdebug(F("write eeprom"));
                adrStart = ((unsigned int)(frameData[1]) << 8) | frameData[2];  // start adress of eeprom
                for(byte i = 4; i < frameDataLength; i++){
             	 writeEEPROM(adrStart+i-4, frameData[i]);
@@ -120,7 +118,7 @@ void HMWModule::processEvent(byte const * const frameData, byte frameDataLength,
             break;
 
          case 'h':                                                               // get Module type and hardware version
-        	HMWDEBUG("Hardware Version and Type");
+        	hmwdebug(F("Hardware Version and Type"));
             sendAck = 0;
             hmwrs485->txFrameData[0] = deviceType;
             hmwrs485->txFrameData[1] = MODULE_HARDWARE_VERSION;
@@ -146,21 +144,14 @@ void HMWModule::processEvent(byte const * const frameData, byte frameDataLength,
         	// TODO: Bootloader?
         	break;
          case 'v':                                                               // get firmware version
-            HMWDEBUG("Firmware Version");
+            hmwdebug(F("Firmware Version"));
             sendAck = 0;
             hmwrs485->txFrameData[0] = MODULE_FIRMWARE_VERSION / 0x100;
             hmwrs485->txFrameData[1] = MODULE_FIRMWARE_VERSION & 0xFF;
             hmwrs485->txFrameDataLength = 2;
             break;
          case 'x':                                                               // Level set
-            //if(frameDataLength == 2)
-            //{
-                processEventSetLevel(frameData[1], frameData[2]);                                               // Install-Test TODO: ???
-            //}
-            //else if(frameDataLength == 5)
-            //{
-            //    processEventSetLevel(frameData[1], *(uint32_t *)(&frameData[2]));
-            //}
+            processEventSetLevel(frameData[1], frameData[2]);                                               // Install-Test TODO: ???
             sendAck = 2;
             break;
 
@@ -312,7 +303,8 @@ void HMWModule::processEventKey(){
      void HMWModule::setNewId(){
        if (hmwrs485->txSenderAddress == 0x42FFFFFF) {
     	 hmwrs485->txSenderAddress = millis();
-    	 HMWDEBUG("Setting new ID: %lu",hmwrs485->txSenderAddress);
+    	 hmwdebug("Setting new ID:");
+    	 hmwdebug(hmwrs485->txSenderAddress);
     	 for(byte i = 0; i < 4; i++)
     	   writeEEPROM(E2END - i, hmwrs485->txSenderAddress >> (i*8), true);
        }

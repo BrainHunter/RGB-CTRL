@@ -1,8 +1,11 @@
+#ifndef ARDUINO_H
+#define ARDUINO_H
 // This is for using the arduino type HMW-lib
 
 #include <stdbool.h>
 #include <stdint.h>
 #include <String.h>
+#include <stdio.h>
 #include "Stream.h"
 #include "Arduino-EEPROM.h"
 
@@ -15,3 +18,10 @@ typedef uint8_t byte;
 
 extern unsigned int systime;
 #define millis() systime
+
+// remove the digital Write. don't need it in this project.
+#define digitalWrite(...)
+// remove the F() -> ARM core here...
+#define F(val)  (val)
+
+#endif

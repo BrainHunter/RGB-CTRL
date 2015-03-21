@@ -9,8 +9,8 @@
  */
 
 #include "HMWRS485.h"
-//#include "HMWDebug.h"
-#include "PrintfDebug.h"
+#include "HMWDebug.h"
+
 #include "Arduino.h"
 
 HMWRS485::HMWRS485(Stream* _serial, byte _txEnablePin) {
@@ -60,7 +60,7 @@ void HMWRS485::loop() {
   if(frameComplete) {
 	frameComplete = 0;   // only once
     if(targetAddress == txSenderAddress || targetAddress == 0xFFFFFFFF){
-      HMWDEBUG("parsing from loop...");
+      hmwdebug(F("parsing from loop..."));
 	  if(parseFrame())
 	    module->processEvent(frameData, frameDataLength, (targetAddress == 0xFFFFFFFF));
 	}
@@ -82,7 +82,7 @@ boolean HMWRS485::parseFrame () { // returns true, if event needs to be processe
     // Absenderadresse mus stimmen
     if(seqNumReceived == seqNumSent && senderAddress == txTargetAddress) {
       // "ackwait" zuruecksetzen (ansonsten wird auf den Timeout vertraut)
-      HMWDEBUG("Received ACK");
+      hmwdebug(F("Received ACK"));
       frameStatus &= ~FRAME_SENTACKWAIT;
     }
   }
@@ -113,8 +113,8 @@ void HMWRS485::sendFrame(){
 
 // simple send for ACKs and Broadcasts
   if(txTargetAddress == 0xFFFFFFFF || ((txFrameControlByte & 0x03) == 1)) {
-	HMWDEBUG("Sending ACK or Broadcast");
-	HMWDEBUG("%X", txFrameControlByte);
+	hmwdebug(F("Sending ACK or Broadcast"));
+	hmwdebug(txFrameControlByte,HEX);
 	sendFrameSingle();
 	// TODO: nicht besonders schoen, zuerst ackwait zu setzen und dann wieder zu loeschen
 	frameStatus &= ~FRAME_SENTACKWAIT; // we do not really wait
@@ -137,7 +137,7 @@ void HMWRS485::sendFrame(){
       if(frameComplete) {
         if(targetAddress == txSenderAddress){
           frameComplete = 0;
-          HMWDEBUG("parsing from ackwait ");
+          hmwdebug(F("parsing from ackwait "));
           parseFrame();
           if(!(frameStatus & FRAME_SENTACKWAIT))  // ACK empfangen
             return;
@@ -174,8 +174,8 @@ void HMWRS485::sendFrameSingle() {
         txFrameControlByte |= (txSeqNum << 5);
       };
 
-      HMWDEBUG("\nSending\n");
-      //digitalWrite(txEnablePin, HIGH);
+      hmwdebug(F("\nSending\n"));
+      digitalWrite(txEnablePin, HIGH);
       serial->write(FRAME_START_LONG);  // send startbyte
       crc16checksum = crc16Shift(FRAME_START_LONG , crc16checksum);
 
@@ -215,8 +215,8 @@ void HMWRS485::sendFrameSingle() {
       sendFrameByte(crc16checksum / 0x100);
       sendFrameByte(crc16checksum & 0xFF);
 
-//      serial->flush();                  // othwerwise, enable pin will go low too soon
-//      digitalWrite(txEnablePin, LOW);
+      serial->flush();                  // othwerwise, enable pin will go low too soon
+      digitalWrite(txEnablePin, LOW);
 
       frameStatus |= FRAME_SENTACKWAIT;
       // frameStatus &= ~FRAME_ACKOK;    TODO: Remove, if not needed
@@ -228,7 +228,9 @@ void HMWRS485::sendFrameSingle() {
 // TX-Pin needs to be HIGH before calling this
 void HMWRS485::sendFrameByte(byte sendByte) {
 	// Debug
-	HMWDEBUG("%02X:",sendByte);
+	hmwdebug(sendByte >> 4, HEX);
+	hmwdebug(sendByte & 15, HEX);
+	hmwdebug(":");
     if(sendByte == FRAME_START_LONG || sendByte == FRAME_START_SHORT || sendByte == ESCAPE_CHAR) {
        serial->write(ESCAPE_CHAR);
        sendByte &= 0x7F;
@@ -303,8 +305,10 @@ void HMWRS485::receive(){
     byte rxByte = serial->read();    // von Serial oder SoftSerial
 
     // Debug
-    if( rxByte == 0xFD ) HMWDEBUG("\nReceiving \n");
-    HMWDEBUG("%02X:",rxByte);
+    if( rxByte == 0xFD ) hmwdebug(F("\nReceiving \n"));
+    hmwdebug(rxByte >> 4, HEX);
+    hmwdebug(rxByte & 15, HEX);
+    hmwdebug(":");
 
    if(rxByte == ESCAPE_CHAR && !(frameStatus & FRAME_ESCAPE)){
 // TODO: Wenn frameEscape gesetzt ist, dann sind das zwei Escapes hintereinander
@@ -380,7 +384,7 @@ void HMWRS485::receive(){
                   // die gerade gefundene Nachricht verarbeiten
                   return;
                }else{
-            	  HMWDEBUG("crc error");
+            	  hmwdebug(F("crc error"));
                }
             }
          }

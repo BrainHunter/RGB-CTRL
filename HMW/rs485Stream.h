@@ -11,7 +11,10 @@ public:
 	size_t write(uint8_t c);
 	int read(void);
 	int available(void);
+    void flush(void);
 
+    size_t print(const char[]);
+    size_t print(int, int);
 };
 
 extern RS485StreamClass RS485Stream;

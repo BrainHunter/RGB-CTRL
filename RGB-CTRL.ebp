@@ -77,6 +77,10 @@
 			<Add option="-eb_start_files" />
 			<Add option="-eb_lib=n" />
 		</Linker>
+		<Unit filename="HMW\DebugStream.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="HMW\DebugStream.h" />
 		<Unit filename="HMW\HMW485-Lib\HBW-LC-Sw8.cpp">
 			<Option compilerVar="CC" />
 			<Option target="&lt;{~None~}&gt;" />
@@ -86,10 +90,9 @@
 		</Unit>
 		<Unit filename="HMW\HMW485-Lib\HMWDebug.cpp">
 			<Option compilerVar="CC" />
-			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="HMW\HMW485-Lib\HMWDebug.h">
-			<Option target="&lt;{~None~}&gt;" />
+			<Option compilerVar="CPP" />
 		</Unit>
 		<Unit filename="HMW\HMW485-Lib\HMWModule.cpp">
 			<Option compilerVar="CC" />
