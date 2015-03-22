@@ -191,8 +191,8 @@ void HMWModule::processEventKey(){
 	 hmwrs485->txFrameData[0] = 0x69;         // 'i'
 	 hmwrs485->txFrameData[1] = channel;      // Sensornummer
 	 unsigned int info = device->getLevel(channel);
-	 hmwrs485->txFrameData[2] = info / 0x100;
-	 hmwrs485->txFrameData[3] = info & 0xFF;
+	 hmwrs485->txFrameData[3] = info / 0x100;
+	 hmwrs485->txFrameData[2] = info & 0xFF;
    };
 
 
@@ -295,7 +295,7 @@ void HMWModule::processEventKey(){
     	 hmwrs485->txSenderAddress |= EEPROM.read(E2END - 3 + i);
        }
        if(hmwrs485->txSenderAddress == 0xFFFFFFFF)
-    	   hmwrs485->txSenderAddress = 0x41FFFFFF;
+    	   hmwrs485->txSenderAddress = 0x42FFFFFF;
      }
 
 

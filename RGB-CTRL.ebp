@@ -274,6 +274,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="rgb\rgb.h" />
+		<Unit filename="src\EEprom-Layout.txt">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="src\main.c">
 			<Option compilerVar="CC" />
 		</Unit>

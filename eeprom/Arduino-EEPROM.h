@@ -13,6 +13,7 @@ class EEPROMClass {
 
 extern EEPROMClass EEPROM;
 
-#define E2END	PAGE1_END_ADDRESS
+#define E2END	0xff
+
 
 #endif
