@@ -5,10 +5,19 @@
 int Tim2init(void);
 int GPIOinit(void);
 
+void RGB_SetState(int State);
+
 // save vars for the actual rgb settings
 float internal_r = 0;
 float internal_g = 0;
 float internal_b = 0;
+
+float internal_h = 0;       // hue
+float internal_s = 0;       // satuation
+float internal_v = 0;       // value
+
+extern volatile unsigned int systime;
+
 
 int RGB_init(void)
 {
@@ -99,23 +108,101 @@ int GPIOinit(void)
 	return 0;
 }
 
+unsigned int timediff(unsigned int t1, unsigned int t2)
+{
+    int d = (int)t1 - (int)t2;
+    if(d < 0) d = -d;
+    return (unsigned int) d;
+}
+
+
+
+#define OFF     0
+#define ON      1
+#define Fading  2
+int rgbState = 0;
+unsigned int rgbTime=0;
+
+void RGB_SetState(int State)
+{
+    rgbState = State;
+    rgbTime = systime;
+    return;
+}
+
+void RGB_loop(void)
+{
+    // check if we can switch to OFf
+    if(internal_r == 0 && internal_g == 0 && internal_b == 0 && rgbState == ON)   // light is off
+    {
+        RGB_SetState(OFF);
+    }
+
+    switch(rgbState)
+    {
+        case OFF:
+            if(timediff(systime,rgbTime) > 5000) // > 5sec
+            {
+                GPIO_WriteBit(GPIOA, GPIO_Pin_3, Bit_RESET);	// Ext SW
+            }
+            break;
+        case ON:
+            break;
+        case Fading:
+            {
+                static unsigned int fadetime = 0;
+                if(timediff(systime,fadetime) >= 100)
+                {
+                    float r,g,b;
+                    internal_h += 1;
+                    hsv_to_rgb(&r, &g, &b, internal_h, internal_s, internal_v);
+                    RGB_set(r,g,b);
+                    if(internal_h >= 360) internal_h = 0;
+                }
+                break;
+            }
+        default:
+            break;
+    }
+
+}
+
 
 void RGB_setChannel(int channel, float value)
 {
+    GPIO_WriteBit(GPIOA, GPIO_Pin_3, Bit_SET);
     switch(channel)
     {
         case RED:
-            internal_r = value;
+                internal_r = value;
+                RGB_SetState(ON);
                 break;
         case GREEN:
-            internal_g = value;
+                internal_g = value;
+                RGB_SetState(ON);
                 break;
         case BLUE:
-            internal_b = value;
+                internal_b = value;
+                RGB_SetState(ON);
+                break;
+        case HUE:
+                internal_h = value*360;
+                if(internal_h >= 360) internal_h = 0;
+                hsv_to_rgb(&internal_r, &internal_g, &internal_b, internal_h, internal_s, internal_v);
+                break;
+        case SATUATION:
+                internal_s = value;
+                hsv_to_rgb(&internal_r, &internal_g, &internal_b, internal_h, internal_s, internal_v);
+                break;
+        case VALUE:
+                internal_v = value;
+                if(rgbState==OFF)RGB_SetState(ON);  // leave state @ Fading
+                hsv_to_rgb(&internal_r, &internal_g, &internal_b, internal_h, internal_s, internal_v);
                 break;
         default:
             return;
     }
+
     RGB_set(internal_r,internal_g, internal_b);
     return;
 }
@@ -125,6 +212,9 @@ float RGB_getChannel(int channel)
     if (channel == RED)     return internal_r;
     if (channel == GREEN)   return internal_g;
     if (channel == BLUE)    return internal_b;
+    if (channel == HUE)     return internal_h/360;
+    if (channel == SATUATION)   return internal_s;
+    if (channel == VALUE)    return internal_v;
     return 0;
 }
 
@@ -194,3 +284,5 @@ void hsv_to_rgb(float* r, float* g, float* b, float h, float s, float v)	// http
     }
 
 }
+
+

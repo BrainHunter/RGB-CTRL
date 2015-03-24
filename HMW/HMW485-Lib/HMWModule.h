@@ -14,7 +14,7 @@
 
 // TODO: Firmware/Hardware Version aus EEPROM bzw. Flash?
 #define MODULE_HARDWARE_VERSION 1
-#define MODULE_FIRMWARE_VERSION 0x0306
+#define MODULE_FIRMWARE_VERSION 0x0101
 
 
 // Abstrakte Basisklasse mit Callbacks aus dem Modul

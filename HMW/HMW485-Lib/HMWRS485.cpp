@@ -357,14 +357,17 @@ void HMWRS485::receive(){
          }else if(addressPointer != 0xFF) { // Datenlänge empfangen
             addressPointer = 0xFF;
             rxFrameDataLength = rxByte;
+            if(rxFrameDataLength > MAX_RX_FRAME_LENGTH) // Maximale Puffergöße checken.
+            {
+                frameStatus &= ~FRAME_START;
+                hmwdebug(F("\nPacket size to big - ignore\n"));
+            }
          }else{                   // Daten empfangen
             rxFrameData[framePointer] = rxByte;   // Daten in Puffer speichern
             framePointer++;
-            if(framePointer == MAX_RX_FRAME_LENGTH)
-                while(1);
             if(framePointer == rxFrameDataLength) {  // Daten komplett
                if(crc16checksum == 0) {    //
-            	  frameStatus &= ~FRAME_START;
+                  frameStatus &= ~FRAME_START;
                   // frameStatus |= FRAME_CRCOK;  TODO: remove, if not needed
                   // Framedaten für die spätere Verarbeitung speichern
                   // TODO: Braucht man das wirklich?
@@ -384,7 +387,7 @@ void HMWRS485::receive(){
                   // die gerade gefundene Nachricht verarbeiten
                   return;
                }else{
-            	  hmwdebug(F("crc error"));
+                  hmwdebug(F("crc error"));
                }
             }
          }

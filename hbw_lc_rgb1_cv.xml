@@ -3,7 +3,7 @@
 	<type name="RS485 dimming actuator 1-channel leading edge (DIN rails)" id="HBW-LC-RGB1-CV" priority="2">
 		<parameter index="0" size="1" const_value="160"/>
 		<parameter index="1" size="1" const_value="0"/>
-		<parameter index="2" size="2" cond_op="GE" const_value="0x0302"/>
+		<parameter index="2" size="2" cond_op="GE" const_value="0x0100"/>
 	</type>
 </supported_types>
 <paramset type="MASTER" id="HBW-LC-RGB1-CV_dev_master">
@@ -82,515 +82,515 @@
 				</physical>
 			</parameter>
 		</paramset>
-		<paramset type="LINK" id="hmw_dimmer_ch_link" peer_param="SENSOR" channel_param="CHANNEL" count="16" address_start="0x0C" address_step="54">
-		<parameter id="UI_HINT">
-			<logical type="string" default="" use_default_on_failure="true"/>
-			<physical type="string" interface="store" id="UI_HINT" save_on_change="true"/>
-		</parameter>
-		<parameter id="SENSOR" operations="none" hidden="true">
-			<logical type="address"/>
-			<physical type="array">
-				<physical type="integer" size="4.0" interface="eeprom">
-					<address index="+0"/>
+		<paramset type="LINK" id="hmw_dimmer_ch_link" peer_param="SENSOR" channel_param="CHANNEL" count="1" address_start="0x0E" address_step="54">
+			<parameter id="UI_HINT">
+				<logical type="string" default="" use_default_on_failure="true"/>
+				<physical type="string" interface="store" id="UI_HINT" save_on_change="true"/>
+			</parameter>
+			<parameter id="SENSOR" operations="none" hidden="true">
+				<logical type="address"/>
+				<physical type="array">
+					<physical type="integer" size="4.0" interface="eeprom">
+						<address index="+0"/>
+					</physical>
+					<physical type="integer" size="1.0" interface="eeprom">
+						<address index="+4"/>
+					</physical>
 				</physical>
+			</parameter>
+			<parameter id="CHANNEL" operations="none" hidden="true">
+				<logical type="integer" min="0" max="255" default="255"/>
 				<physical type="integer" size="1.0" interface="eeprom">
-					<address index="+4"/>
+					<address index="+5"/>
 				</physical>
-			</physical>
-		</parameter>
-		<parameter id="CHANNEL" operations="none" hidden="true">
-			<logical type="integer" min="0" max="255" default="255"/>
+			</parameter>
+			<parameter id="SHORT_ON_TIME_MODE">
+				<logical type="option">
+					<option id="ABSOLUTE" default="true"/>
+					<option id="MINIMAL"/>
+				</logical>
+				<physical type="integer" size="0.1" interface="eeprom">
+					<address index="+6.7"/>
+				</physical>
+			</parameter>
+			<parameter id="SHORT_OFF_TIME_MODE">
+				<logical type="option">
+					<option id="ABSOLUTE" default="true"/>
+					<option id="MINIMAL"/>
+				</logical>
+				<physical type="integer" size="0.1" interface="eeprom">
+					<address index="+6.6"/>
+				</physical>
+			</parameter>
+			<parameter id="SHORT_ONDELAY_MODE">
+				<logical type="option">
+					<option id="SET_TO_OFF" default="true"/>
+					<option id="NO_CHANGE"/>
+				</logical>
+				<physical type="integer" size="0.1" interface="eeprom">
+					<address index="+6.5"/>
+				</physical>
+			</parameter>
+			<parameter id="SHORT_ACTION_TYPE">
+				<logical type="option">
+					<option id="INACTIVE"/>
+					<option id="JUMP_TO_TARGET" default="true"/>
+					<option id="TOGGLE_TO_COUNTER"/>
+					<option id="TOGGLE_INVERS_TO_COUNTER"/>
+					<option id="UPDIM"/>
+					<option id="DOWNDIM"/>
+					<option id="TOGGLEDIM"/>
+					<option id="TOGGLEDIM_TO_COUNTER"/>
+					<option id="TOGGLEDIM_INVERS_TO_COUNTER"/>
+				</logical>
+				<physical type="integer" size="0.4" interface="eeprom">
+					<address index="+6.0"/>
+				</physical>
+			</parameter>
+			<parameter id="SHORT_OFF_LEVEL">
+			<logical type="float" min="0.0" max="1.0" default="0.0" unit="100%"/>
+			<conversion type="float_integer_scale" factor="200"/>
 			<physical type="integer" size="1.0" interface="eeprom">
-				<address index="+5"/>
+			<address index="+7"/>
 			</physical>
-		</parameter>
-		<parameter id="SHORT_ON_TIME_MODE">
+			</parameter>
+			<parameter id="SHORT_ON_MIN_LEVEL">
+			<logical type="float" min="0.0" max="1.0" default="0.1" unit="100%"/>
+			<conversion type="float_integer_scale" factor="200"/>
+			<physical type="integer" size="1.0" interface="eeprom">
+			<address index="+8"/>
+			</physical>
+			</parameter>
+			<parameter id="SHORT_ON_LEVEL">
+			<logical type="float" min="0.0" max="1.0" default="1.0" unit="100%"/>
+			<conversion type="float_integer_scale" factor="200"/>
+			<physical type="integer" size="1.0" interface="eeprom">
+			<address index="+9"/>
+			</physical>
+			</parameter>
+			<parameter id="SHORT_RAMP_START_STEP">
+			<logical type="float" min="0.0" max="1.0" default="0.05" unit="100%"/>
+			<conversion type="float_integer_scale" factor="200"/>
+			<physical type="integer" size="1.0" interface="eeprom">
+			<address index="+10"/>
+			</physical>
+			</parameter>
+			<parameter id="SHORT_OFFDELAY_STEP">
+			<logical type="float" min="0.0" max="1.0" default="0.05" unit="100%"/>
+			<conversion type="float_integer_scale" factor="200"/>
+			<physical type="integer" size="1.0" interface="eeprom">
+			<address index="+11"/>
+			</physical>
+			</parameter>
+			<parameter id="SHORT_ONDELAY_TIME">
+			<logical type="float" min="0.0" max="982980.0" default="0.0" unit="s"/>
+			<physical type="integer" size="2.0" interface="eeprom" endian="little">
+			<address index="+12"/>
+			</physical>
+			<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
+			<conversion type="integer_integer_map">
+			<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
+			</conversion>
+			</parameter>
+			<parameter id="SHORT_RAMPON_TIME">
+			<logical type="float" min="0.0" max="982980.0" default="0.5" unit="s"/>
+			<physical type="integer" size="2.0" interface="eeprom" endian="little">
+			<address index="+14"/>
+			</physical>
+			<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
+			<conversion type="integer_integer_map">
+			<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
+			</conversion>
+			</parameter>
+			<parameter id="SHORT_ON_TIME">
+			<logical type="float" min="0.0" max="982980.0" default="16383000" unit="s">
+			<special_value id="NOT_USED" value="16383000"/>
+			</logical>
+			<physical type="integer" size="2.0" interface="eeprom" endian="little">
+			<address index="+16"/>
+			</physical>
+			<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
+			<conversion type="integer_integer_map">
+			<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
+			</conversion>
+			</parameter>
+			<parameter id="SHORT_OFFDELAY_TIME">
+			<logical type="float" min="0.0" max="982980.0" default="0.0" unit="s"/>
+			<physical type="integer" size="2.0" interface="eeprom" endian="little">
+			<address index="+18"/>
+			</physical>
+			<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
+			<conversion type="integer_integer_map">
+			<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
+			</conversion>
+			</parameter>
+			<parameter id="SHORT_RAMPOFF_TIME">
+			<logical type="float" min="0.0" max="982980.0" default="0.5" unit="s"/>
+			<physical type="integer" size="2.0" interface="eeprom" endian="little">
+			<address index="+20"/>
+			</physical>
+			<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
+			<conversion type="integer_integer_map">
+			<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
+			</conversion>
+			</parameter>
+			<parameter id="SHORT_OFF_TIME">
+			<logical type="float" min="0.0" max="982980.0" default="16383000" unit="s">
+			<special_value id="NOT_USED" value="16383000"/>
+			</logical>
+			<physical type="integer" size="2.0" interface="eeprom" endian="little">
+			<address index="+22"/>
+			</physical>
+			<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
+			<conversion type="integer_integer_map">
+			<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
+			</conversion>
+			</parameter>
+			<parameter id="SHORT_DIM_MIN_LEVEL">
+			<logical type="float" min="0.0" max="1.0" default="0.0" unit="100%"/>
+			<conversion type="float_integer_scale" factor="200"/>
+			<physical type="integer" size="1.0" interface="eeprom">
+			<address index="+24"/>
+			</physical>
+			</parameter>
+			<parameter id="SHORT_DIM_MAX_LEVEL">
+			<logical type="float" min="0.0" max="1.0" default="1.0" unit="100%"/>
+			<conversion type="float_integer_scale" factor="200"/>
+			<physical type="integer" size="1.0" interface="eeprom">
+			<address index="+25"/>
+			</physical>
+			</parameter>
+			<parameter id="SHORT_DIM_STEP">
+			<logical type="float" min="0.0" max="1.0" default="0.05" unit="100%"/>
+			<conversion type="float_integer_scale" factor="200"/>
+			<physical type="integer" size="1.0" interface="eeprom">
+			<address index="+26"/>
+			</physical>
+			</parameter>
+			<parameter id="SHORT_JT_ONDELAY">
 			<logical type="option">
-				<option id="ABSOLUTE" default="true"/>
-				<option id="MINIMAL"/>
+			<option id="ONDELAY"/>
+			<option id="RAMPON" default="true"/>
+			<option id="ON"/>
+			<option id="OFFDELAY"/>
+			<option id="RAMPOFF"/>
+			<option id="OFF"/>
+			<option id="NO_JUMP_IGNORE_COMMAND"/>
+			</logical>
+			<physical type="integer" size="0.4" interface="eeprom" endian="little" read_size="1">
+			<address index="+27.0"/>
+			</physical>
+			</parameter>
+			<parameter id="SHORT_JT_RAMPON">
+			<logical type="option">
+			<option id="ONDELAY"/>
+			<option id="RAMPON"/>
+			<option id="ON" default="true"/>
+			<option id="OFFDELAY"/>
+			<option id="RAMPOFF"/>
+			<option id="OFF"/>
+			<option id="NO_JUMP_IGNORE_COMMAND"/>
+			</logical>
+			<physical type="integer" size="0.4" interface="eeprom" endian="little" read_size="1">
+			<address index="+27.4"/>
+			</physical>
+			</parameter>
+			<parameter id="SHORT_JT_ON">
+			<logical type="option">
+			<option id="ONDELAY"/>
+			<option id="RAMPON"/>
+			<option id="ON"/>
+			<option id="OFFDELAY" default="true"/>
+			<option id="RAMPOFF"/>
+			<option id="OFF"/>
+			<option id="NO_JUMP_IGNORE_COMMAND"/>
+			</logical>
+			<physical type="integer" size="0.4" interface="eeprom" endian="little" read_size="1">
+			<address index="+28.0"/>
+			</physical>
+			</parameter>
+			<parameter id="SHORT_JT_OFFDELAY">
+			<logical type="option">
+			<option id="ONDELAY"/>
+			<option id="RAMPON"/>
+			<option id="ON"/>
+			<option id="OFFDELAY"/>
+			<option id="RAMPOFF" default="true"/>
+			<option id="OFF"/>
+			<option id="NO_JUMP_IGNORE_COMMAND"/>
+			</logical>
+			<physical type="integer" size="0.4" interface="eeprom" endian="little" read_size="1">
+			<address index="+28.4"/>
+			</physical>
+			</parameter>
+			<parameter id="SHORT_JT_RAMPOFF">
+			<logical type="option">
+			<option id="ONDELAY"/>
+			<option id="RAMPON"/>
+			<option id="ON"/>
+			<option id="OFFDELAY"/>
+			<option id="RAMPOFF"/>
+			<option id="OFF" default="true"/>
+			<option id="NO_JUMP_IGNORE_COMMAND"/>
+			</logical>
+			<physical type="integer" size="0.4" interface="eeprom" endian="little" read_size="1">
+			<address index="+29.0"/>
+			</physical>
+			</parameter>
+			<parameter id="SHORT_JT_OFF">
+			<logical type="option">
+			<option id="ONDELAY" default="true"/>
+			<option id="RAMPON"/>
+			<option id="ON"/>
+			<option id="OFFDELAY"/>
+			<option id="RAMPOFF"/>
+			<option id="OFF"/>
+			<option id="NO_JUMP_IGNORE_COMMAND"/>
+			</logical>
+			<physical type="integer" size="0.4" interface="eeprom" endian="little" read_size="1">
+			<address index="+29.4"/>
+			</physical>
+			</parameter>
+			<parameter id="LONG_ON_TIME_MODE">
+			<logical type="option">
+			<option id="ABSOLUTE" default="true"/>
+			<option id="MINIMAL"/>
 			</logical>
 			<physical type="integer" size="0.1" interface="eeprom">
-				<address index="+6.7"/>
+			<address index="+30.7"/>
 			</physical>
-		</parameter>
-		<parameter id="SHORT_OFF_TIME_MODE">
+			</parameter>
+			<parameter id="LONG_OFF_TIME_MODE">
 			<logical type="option">
-				<option id="ABSOLUTE" default="true"/>
-				<option id="MINIMAL"/>
+			<option id="ABSOLUTE" default="true"/>
+			<option id="MINIMAL"/>
 			</logical>
 			<physical type="integer" size="0.1" interface="eeprom">
-				<address index="+6.6"/>
+			<address index="+30.6"/>
 			</physical>
-		</parameter>
-		<parameter id="SHORT_ONDELAY_MODE">
+			</parameter>
+			<parameter id="LONG_ONDELAY_MODE">
 			<logical type="option">
-				<option id="SET_TO_OFF" default="true"/>
-				<option id="NO_CHANGE"/>
+			<option id="SET_TO_OFF" default="true"/>
+			<option id="NO_CHANGE"/>
 			</logical>
 			<physical type="integer" size="0.1" interface="eeprom">
-				<address index="+6.5"/>
+			<address index="+30.5"/>
 			</physical>
-		</parameter>
-		<parameter id="SHORT_ACTION_TYPE">
+			</parameter>
+			<parameter id="LONG_MULTIEXECUTE">
+			<logical type="boolean" default="true"/>
+			<physical type="integer" size="0.1" interface="eeprom">
+			<address index="+30.4"/>
+			</physical>
+			</parameter>
+			<parameter id="LONG_ACTION_TYPE">
 			<logical type="option">
-				<option id="INACTIVE"/>
-				<option id="JUMP_TO_TARGET" default="true"/>
-				<option id="TOGGLE_TO_COUNTER"/>
-				<option id="TOGGLE_INVERS_TO_COUNTER"/>
-				<option id="UPDIM"/>
-				<option id="DOWNDIM"/>
-				<option id="TOGGLEDIM"/>
-				<option id="TOGGLEDIM_TO_COUNTER"/>
-				<option id="TOGGLEDIM_INVERS_TO_COUNTER"/>
+			<option id="INACTIVE"/>
+			<option id="JUMP_TO_TARGET"/>
+			<option id="TOGGLE_TO_COUNTER"/>
+			<option id="TOGGLE_INVERS_TO_COUNTER"/>
+			<option id="UPDIM"/>
+			<option id="DOWNDIM"/>
+			<option id="TOGGLEDIM" default="true"/>
+			<option id="TOGGLEDIM_TO_COUNTER"/>
+			<option id="TOGGLEDIM_INVERS_TO_COUNTER"/>
 			</logical>
 			<physical type="integer" size="0.4" interface="eeprom">
-				<address index="+6.0"/>
+			<address index="+30.0"/>
 			</physical>
-		</parameter>
-		<parameter id="SHORT_OFF_LEVEL">
-		<logical type="float" min="0.0" max="1.0" default="0.0" unit="100%"/>
-		<conversion type="float_integer_scale" factor="200"/>
-		<physical type="integer" size="1.0" interface="eeprom">
-		<address index="+7"/>
-		</physical>
-		</parameter>
-		<parameter id="SHORT_ON_MIN_LEVEL">
-		<logical type="float" min="0.0" max="1.0" default="0.1" unit="100%"/>
-		<conversion type="float_integer_scale" factor="200"/>
-		<physical type="integer" size="1.0" interface="eeprom">
-		<address index="+8"/>
-		</physical>
-		</parameter>
-		<parameter id="SHORT_ON_LEVEL">
-		<logical type="float" min="0.0" max="1.0" default="1.0" unit="100%"/>
-		<conversion type="float_integer_scale" factor="200"/>
-		<physical type="integer" size="1.0" interface="eeprom">
-		<address index="+9"/>
-		</physical>
-		</parameter>
-		<parameter id="SHORT_RAMP_START_STEP">
-		<logical type="float" min="0.0" max="1.0" default="0.05" unit="100%"/>
-		<conversion type="float_integer_scale" factor="200"/>
-		<physical type="integer" size="1.0" interface="eeprom">
-		<address index="+10"/>
-		</physical>
-		</parameter>
-		<parameter id="SHORT_OFFDELAY_STEP">
-		<logical type="float" min="0.0" max="1.0" default="0.05" unit="100%"/>
-		<conversion type="float_integer_scale" factor="200"/>
-		<physical type="integer" size="1.0" interface="eeprom">
-		<address index="+11"/>
-		</physical>
-		</parameter>
-		<parameter id="SHORT_ONDELAY_TIME">
-		<logical type="float" min="0.0" max="982980.0" default="0.0" unit="s"/>
-		<physical type="integer" size="2.0" interface="eeprom" endian="little">
-		<address index="+12"/>
-		</physical>
-		<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
-		<conversion type="integer_integer_map">
-		<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
-		</conversion>
-		</parameter>
-		<parameter id="SHORT_RAMPON_TIME">
-		<logical type="float" min="0.0" max="982980.0" default="0.5" unit="s"/>
-		<physical type="integer" size="2.0" interface="eeprom" endian="little">
-		<address index="+14"/>
-		</physical>
-		<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
-		<conversion type="integer_integer_map">
-		<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
-		</conversion>
-		</parameter>
-		<parameter id="SHORT_ON_TIME">
-		<logical type="float" min="0.0" max="982980.0" default="16383000" unit="s">
-		<special_value id="NOT_USED" value="16383000"/>
-		</logical>
-		<physical type="integer" size="2.0" interface="eeprom" endian="little">
-		<address index="+16"/>
-		</physical>
-		<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
-		<conversion type="integer_integer_map">
-		<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
-		</conversion>
-		</parameter>
-		<parameter id="SHORT_OFFDELAY_TIME">
-		<logical type="float" min="0.0" max="982980.0" default="0.0" unit="s"/>
-		<physical type="integer" size="2.0" interface="eeprom" endian="little">
-		<address index="+18"/>
-		</physical>
-		<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
-		<conversion type="integer_integer_map">
-		<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
-		</conversion>
-		</parameter>
-		<parameter id="SHORT_RAMPOFF_TIME">
-		<logical type="float" min="0.0" max="982980.0" default="0.5" unit="s"/>
-		<physical type="integer" size="2.0" interface="eeprom" endian="little">
-		<address index="+20"/>
-		</physical>
-		<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
-		<conversion type="integer_integer_map">
-		<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
-		</conversion>
-		</parameter>
-		<parameter id="SHORT_OFF_TIME">
-		<logical type="float" min="0.0" max="982980.0" default="16383000" unit="s">
-		<special_value id="NOT_USED" value="16383000"/>
-		</logical>
-		<physical type="integer" size="2.0" interface="eeprom" endian="little">
-		<address index="+22"/>
-		</physical>
-		<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
-		<conversion type="integer_integer_map">
-		<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
-		</conversion>
-		</parameter>
-		<parameter id="SHORT_DIM_MIN_LEVEL">
-		<logical type="float" min="0.0" max="1.0" default="0.0" unit="100%"/>
-		<conversion type="float_integer_scale" factor="200"/>
-		<physical type="integer" size="1.0" interface="eeprom">
-		<address index="+24"/>
-		</physical>
-		</parameter>
-		<parameter id="SHORT_DIM_MAX_LEVEL">
-		<logical type="float" min="0.0" max="1.0" default="1.0" unit="100%"/>
-		<conversion type="float_integer_scale" factor="200"/>
-		<physical type="integer" size="1.0" interface="eeprom">
-		<address index="+25"/>
-		</physical>
-		</parameter>
-		<parameter id="SHORT_DIM_STEP">
-		<logical type="float" min="0.0" max="1.0" default="0.05" unit="100%"/>
-		<conversion type="float_integer_scale" factor="200"/>
-		<physical type="integer" size="1.0" interface="eeprom">
-		<address index="+26"/>
-		</physical>
-		</parameter>
-		<parameter id="SHORT_JT_ONDELAY">
-		<logical type="option">
-		<option id="ONDELAY"/>
-		<option id="RAMPON" default="true"/>
-		<option id="ON"/>
-		<option id="OFFDELAY"/>
-		<option id="RAMPOFF"/>
-		<option id="OFF"/>
-		<option id="NO_JUMP_IGNORE_COMMAND"/>
-		</logical>
-		<physical type="integer" size="0.4" interface="eeprom" endian="little" read_size="1">
-		<address index="+27.0"/>
-		</physical>
-		</parameter>
-		<parameter id="SHORT_JT_RAMPON">
-		<logical type="option">
-		<option id="ONDELAY"/>
-		<option id="RAMPON"/>
-		<option id="ON" default="true"/>
-		<option id="OFFDELAY"/>
-		<option id="RAMPOFF"/>
-		<option id="OFF"/>
-		<option id="NO_JUMP_IGNORE_COMMAND"/>
-		</logical>
-		<physical type="integer" size="0.4" interface="eeprom" endian="little" read_size="1">
-		<address index="+27.4"/>
-		</physical>
-		</parameter>
-		<parameter id="SHORT_JT_ON">
-		<logical type="option">
-		<option id="ONDELAY"/>
-		<option id="RAMPON"/>
-		<option id="ON"/>
-		<option id="OFFDELAY" default="true"/>
-		<option id="RAMPOFF"/>
-		<option id="OFF"/>
-		<option id="NO_JUMP_IGNORE_COMMAND"/>
-		</logical>
-		<physical type="integer" size="0.4" interface="eeprom" endian="little" read_size="1">
-		<address index="+28.0"/>
-		</physical>
-		</parameter>
-		<parameter id="SHORT_JT_OFFDELAY">
-		<logical type="option">
-		<option id="ONDELAY"/>
-		<option id="RAMPON"/>
-		<option id="ON"/>
-		<option id="OFFDELAY"/>
-		<option id="RAMPOFF" default="true"/>
-		<option id="OFF"/>
-		<option id="NO_JUMP_IGNORE_COMMAND"/>
-		</logical>
-		<physical type="integer" size="0.4" interface="eeprom" endian="little" read_size="1">
-		<address index="+28.4"/>
-		</physical>
-		</parameter>
-		<parameter id="SHORT_JT_RAMPOFF">
-		<logical type="option">
-		<option id="ONDELAY"/>
-		<option id="RAMPON"/>
-		<option id="ON"/>
-		<option id="OFFDELAY"/>
-		<option id="RAMPOFF"/>
-		<option id="OFF" default="true"/>
-		<option id="NO_JUMP_IGNORE_COMMAND"/>
-		</logical>
-		<physical type="integer" size="0.4" interface="eeprom" endian="little" read_size="1">
-		<address index="+29.0"/>
-		</physical>
-		</parameter>
-		<parameter id="SHORT_JT_OFF">
-		<logical type="option">
-		<option id="ONDELAY" default="true"/>
-		<option id="RAMPON"/>
-		<option id="ON"/>
-		<option id="OFFDELAY"/>
-		<option id="RAMPOFF"/>
-		<option id="OFF"/>
-		<option id="NO_JUMP_IGNORE_COMMAND"/>
-		</logical>
-		<physical type="integer" size="0.4" interface="eeprom" endian="little" read_size="1">
-		<address index="+29.4"/>
-		</physical>
-		</parameter>
-		<parameter id="LONG_ON_TIME_MODE">
-		<logical type="option">
-		<option id="ABSOLUTE" default="true"/>
-		<option id="MINIMAL"/>
-		</logical>
-		<physical type="integer" size="0.1" interface="eeprom">
-		<address index="+30.7"/>
-		</physical>
-		</parameter>
-		<parameter id="LONG_OFF_TIME_MODE">
-		<logical type="option">
-		<option id="ABSOLUTE" default="true"/>
-		<option id="MINIMAL"/>
-		</logical>
-		<physical type="integer" size="0.1" interface="eeprom">
-		<address index="+30.6"/>
-		</physical>
-		</parameter>
-		<parameter id="LONG_ONDELAY_MODE">
-		<logical type="option">
-		<option id="SET_TO_OFF" default="true"/>
-		<option id="NO_CHANGE"/>
-		</logical>
-		<physical type="integer" size="0.1" interface="eeprom">
-		<address index="+30.5"/>
-		</physical>
-		</parameter>
-		<parameter id="LONG_MULTIEXECUTE">
-		<logical type="boolean" default="true"/>
-		<physical type="integer" size="0.1" interface="eeprom">
-		<address index="+30.4"/>
-		</physical>
-		</parameter>
-		<parameter id="LONG_ACTION_TYPE">
-		<logical type="option">
-		<option id="INACTIVE"/>
-		<option id="JUMP_TO_TARGET"/>
-		<option id="TOGGLE_TO_COUNTER"/>
-		<option id="TOGGLE_INVERS_TO_COUNTER"/>
-		<option id="UPDIM"/>
-		<option id="DOWNDIM"/>
-		<option id="TOGGLEDIM" default="true"/>
-		<option id="TOGGLEDIM_TO_COUNTER"/>
-		<option id="TOGGLEDIM_INVERS_TO_COUNTER"/>
-		</logical>
-		<physical type="integer" size="0.4" interface="eeprom">
-		<address index="+30.0"/>
-		</physical>
-		</parameter>
-		<parameter id="LONG_OFF_LEVEL">
-		<logical type="float" min="0.0" max="1.0" default="0.0" unit="100%"/>
-		<conversion type="float_integer_scale" factor="200"/>
-		<physical type="integer" size="1.0" interface="eeprom">
-		<address index="+31"/>
-		</physical>
-		</parameter>
-		<parameter id="LONG_ON_MIN_LEVEL">
-		<logical type="float" min="0.0" max="1.0" default="0.1" unit="100%"/>
-		<conversion type="float_integer_scale" factor="200"/>
-		<physical type="integer" size="1.0" interface="eeprom">
-		<address index="+32"/>
-		</physical>
-		</parameter>
-		<parameter id="LONG_ON_LEVEL">
-		<logical type="float" min="0.0" max="1.0" default="1.0" unit="100%"/>
-		<conversion type="float_integer_scale" factor="200"/>
-		<physical type="integer" size="1.0" interface="eeprom">
-		<address index="+33"/>
-		</physical>
-		</parameter>
-		<parameter id="LONG_RAMP_START_STEP">
-		<logical type="float" min="0.0" max="1.0" default="0.05" unit="100%"/>
-		<conversion type="float_integer_scale" factor="200"/>
-		<physical type="integer" size="1.0" interface="eeprom">
-		<address index="+34"/>
-		</physical>
-		</parameter>
-		<parameter id="LONG_OFFDELAY_STEP">
-		<logical type="float" min="0.0" max="1.0" default="0.05" unit="100%"/>
-		<conversion type="float_integer_scale" factor="200"/>
-		<physical type="integer" size="1.0" interface="eeprom">
-		<address index="+35"/>
-		</physical>
-		</parameter>
-		<parameter id="LONG_ONDELAY_TIME">
-		<logical type="float" min="0.0" max="982980.0" default="0.0" unit="s"/>
-		<physical type="integer" size="2.0" interface="eeprom" endian="little">
-		<address index="+36"/>
-		</physical>
-		<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
-		<conversion type="integer_integer_map">
-		<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
-		</conversion>
-		</parameter>
-		<parameter id="LONG_RAMPON_TIME">
-		<logical type="float" min="0.0" max="982980.0" default="0.5" unit="s"/>
-		<physical type="integer" size="2.0" interface="eeprom" endian="little">
-		<address index="+38"/>
-		</physical>
-		<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
-		<conversion type="integer_integer_map">
-		<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
-		</conversion>
-		</parameter>
-		<parameter id="LONG_ON_TIME">
-		<logical type="float" min="0.0" max="982980.0" default="16383000" unit="s">
-		<special_value id="NOT_USED" value="16383000"/>
-		</logical>
-		<physical type="integer" size="2.0" interface="eeprom" endian="little">
-		<address index="+40"/>
-		</physical>
-		<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
-		<conversion type="integer_integer_map">
-		<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
-		</conversion>
-		</parameter>
-		<parameter id="LONG_OFFDELAY_TIME">
-		<logical type="float" min="0.0" max="982980.0" default="0.0" unit="s"/>
-		<physical type="integer" size="2.0" interface="eeprom" endian="little">
-		<address index="+42"/>
-		</physical>
-		<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
-		<conversion type="integer_integer_map">
-		<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
-		</conversion>
-		</parameter>
-		<parameter id="LONG_RAMPOFF_TIME">
-		<logical type="float" min="0.0" max="982980.0" default="0.5" unit="s"/>
-		<physical type="integer" size="2.0" interface="eeprom" endian="little">
-		<address index="+44"/>
-		</physical>
-		<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
-		<conversion type="integer_integer_map">
-		<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
-		</conversion>
-		</parameter>
-		<parameter id="LONG_OFF_TIME">
-		<logical type="float" min="0.0" max="982980.0" default="16383000" unit="s">
-		<special_value id="NOT_USED" value="16383000"/>
-		</logical>
-		<physical type="integer" size="2.0" interface="eeprom" endian="little">
-		<address index="+46"/>
-		</physical>
-		<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
-		<conversion type="integer_integer_map">
-		<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
-		</conversion>
-		</parameter>
-		<parameter id="LONG_DIM_MIN_LEVEL">
-		<logical type="float" min="0.0" max="1.0" default="0.0" unit="100%"/>
-		<conversion type="float_integer_scale" factor="200"/>
-		<physical type="integer" size="1.0" interface="eeprom">
-		<address index="+48"/>
-		</physical>
-		</parameter>
-		<parameter id="LONG_DIM_MAX_LEVEL">
-		<logical type="float" min="0.0" max="1.0" default="1.0" unit="100%"/>
-		<conversion type="float_integer_scale" factor="200"/>
-		<physical type="integer" size="1.0" interface="eeprom">
-		<address index="+49"/>
-		</physical>
-		</parameter>
-		<parameter id="LONG_DIM_STEP">
-		<logical type="float" min="0.0" max="1.0" default="0.05" unit="100%"/>
-		<conversion type="float_integer_scale" factor="200"/>
-		<physical type="integer" size="1.0" interface="eeprom">
-		<address index="+50"/>
-		</physical>
-		</parameter>
-		<parameter id="LONG_JT_ONDELAY">
-		<logical type="option">
-		<option id="ONDELAY"/>
-		<option id="RAMPON" default="true"/>
-		<option id="ON"/>
-		<option id="OFFDELAY"/>
-		<option id="RAMPOFF"/>
-		<option id="OFF"/>
-		<option id="NO_JUMP_IGNORE_COMMAND"/>
-		</logical>
-		<physical type="integer" size="0.4" interface="eeprom" endian="little" read_size="1">
-		<address index="+51.0"/>
-		</physical>
-		</parameter>
-		<parameter id="LONG_JT_RAMPON">
-		<logical type="option">
-		<option id="ONDELAY"/>
-		<option id="RAMPON"/>
-		<option id="ON" default="true"/>
-		<option id="OFFDELAY"/>
-		<option id="RAMPOFF"/>
-		<option id="OFF"/>
-		<option id="NO_JUMP_IGNORE_COMMAND"/>
-		</logical>
-		<physical type="integer" size="0.4" interface="eeprom" endian="little" read_size="1">
-		<address index="+51.4"/>
-		</physical>
-		</parameter>
-		<parameter id="LONG_JT_ON">
-		<logical type="option">
-		<option id="ONDELAY"/>
-		<option id="RAMPON"/>
-		<option id="ON"/>
-		<option id="OFFDELAY" default="true"/>
-		<option id="RAMPOFF"/>
-		<option id="OFF"/>
-		<option id="NO_JUMP_IGNORE_COMMAND"/>
-		</logical>
-		<physical type="integer" size="0.4" interface="eeprom" endian="little" read_size="1">
-		<address index="+52.0"/>
-		</physical>
-		</parameter>
-		<parameter id="LONG_JT_OFFDELAY">
-		<logical type="option">
-		<option id="ONDELAY"/>
-		<option id="RAMPON"/>
-		<option id="ON"/>
-		<option id="OFFDELAY"/>
-		<option id="RAMPOFF" default="true"/>
-		<option id="OFF"/>
-		<option id="NO_JUMP_IGNORE_COMMAND"/>
-		</logical>
-		<physical type="integer" size="0.4" interface="eeprom" endian="little" read_size="1">
-		<address index="+52.4"/>
-		</physical>
-		</parameter>
-		<parameter id="LONG_JT_RAMPOFF">
-		<logical type="option">
-		<option id="ONDELAY"/>
-		<option id="RAMPON"/>
-		<option id="ON"/>
-		<option id="OFFDELAY"/>
-		<option id="RAMPOFF"/>
-		<option id="OFF" default="true"/>
-		<option id="NO_JUMP_IGNORE_COMMAND"/>
-		</logical>
-		<physical type="integer" size="0.4" interface="eeprom" endian="little" read_size="1">
-		<address index="+53.0"/>
-		</physical>
-		</parameter>
-		<parameter id="LONG_JT_OFF">
+			</parameter>
+			<parameter id="LONG_OFF_LEVEL">
+			<logical type="float" min="0.0" max="1.0" default="0.0" unit="100%"/>
+			<conversion type="float_integer_scale" factor="200"/>
+			<physical type="integer" size="1.0" interface="eeprom">
+			<address index="+31"/>
+			</physical>
+			</parameter>
+			<parameter id="LONG_ON_MIN_LEVEL">
+			<logical type="float" min="0.0" max="1.0" default="0.1" unit="100%"/>
+			<conversion type="float_integer_scale" factor="200"/>
+			<physical type="integer" size="1.0" interface="eeprom">
+			<address index="+32"/>
+			</physical>
+			</parameter>
+			<parameter id="LONG_ON_LEVEL">
+			<logical type="float" min="0.0" max="1.0" default="1.0" unit="100%"/>
+			<conversion type="float_integer_scale" factor="200"/>
+			<physical type="integer" size="1.0" interface="eeprom">
+			<address index="+33"/>
+			</physical>
+			</parameter>
+			<parameter id="LONG_RAMP_START_STEP">
+			<logical type="float" min="0.0" max="1.0" default="0.05" unit="100%"/>
+			<conversion type="float_integer_scale" factor="200"/>
+			<physical type="integer" size="1.0" interface="eeprom">
+			<address index="+34"/>
+			</physical>
+			</parameter>
+			<parameter id="LONG_OFFDELAY_STEP">
+			<logical type="float" min="0.0" max="1.0" default="0.05" unit="100%"/>
+			<conversion type="float_integer_scale" factor="200"/>
+			<physical type="integer" size="1.0" interface="eeprom">
+			<address index="+35"/>
+			</physical>
+			</parameter>
+			<parameter id="LONG_ONDELAY_TIME">
+			<logical type="float" min="0.0" max="982980.0" default="0.0" unit="s"/>
+			<physical type="integer" size="2.0" interface="eeprom" endian="little">
+			<address index="+36"/>
+			</physical>
+			<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
+			<conversion type="integer_integer_map">
+			<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
+			</conversion>
+			</parameter>
+			<parameter id="LONG_RAMPON_TIME">
+			<logical type="float" min="0.0" max="982980.0" default="0.5" unit="s"/>
+			<physical type="integer" size="2.0" interface="eeprom" endian="little">
+			<address index="+38"/>
+			</physical>
+			<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
+			<conversion type="integer_integer_map">
+			<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
+			</conversion>
+			</parameter>
+			<parameter id="LONG_ON_TIME">
+			<logical type="float" min="0.0" max="982980.0" default="16383000" unit="s">
+			<special_value id="NOT_USED" value="16383000"/>
+			</logical>
+			<physical type="integer" size="2.0" interface="eeprom" endian="little">
+			<address index="+40"/>
+			</physical>
+			<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
+			<conversion type="integer_integer_map">
+			<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
+			</conversion>
+			</parameter>
+			<parameter id="LONG_OFFDELAY_TIME">
+			<logical type="float" min="0.0" max="982980.0" default="0.0" unit="s"/>
+			<physical type="integer" size="2.0" interface="eeprom" endian="little">
+			<address index="+42"/>
+			</physical>
+			<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
+			<conversion type="integer_integer_map">
+			<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
+			</conversion>
+			</parameter>
+			<parameter id="LONG_RAMPOFF_TIME">
+			<logical type="float" min="0.0" max="982980.0" default="0.5" unit="s"/>
+			<physical type="integer" size="2.0" interface="eeprom" endian="little">
+			<address index="+44"/>
+			</physical>
+			<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
+			<conversion type="integer_integer_map">
+			<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
+			</conversion>
+			</parameter>
+			<parameter id="LONG_OFF_TIME">
+			<logical type="float" min="0.0" max="982980.0" default="16383000" unit="s">
+			<special_value id="NOT_USED" value="16383000"/>
+			</logical>
+			<physical type="integer" size="2.0" interface="eeprom" endian="little">
+			<address index="+46"/>
+			</physical>
+			<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
+			<conversion type="integer_integer_map">
+			<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
+			</conversion>
+			</parameter>
+			<parameter id="LONG_DIM_MIN_LEVEL">
+			<logical type="float" min="0.0" max="1.0" default="0.0" unit="100%"/>
+			<conversion type="float_integer_scale" factor="200"/>
+			<physical type="integer" size="1.0" interface="eeprom">
+			<address index="+48"/>
+			</physical>
+			</parameter>
+			<parameter id="LONG_DIM_MAX_LEVEL">
+			<logical type="float" min="0.0" max="1.0" default="1.0" unit="100%"/>
+			<conversion type="float_integer_scale" factor="200"/>
+			<physical type="integer" size="1.0" interface="eeprom">
+			<address index="+49"/>
+			</physical>
+			</parameter>
+			<parameter id="LONG_DIM_STEP">
+			<logical type="float" min="0.0" max="1.0" default="0.05" unit="100%"/>
+			<conversion type="float_integer_scale" factor="200"/>
+			<physical type="integer" size="1.0" interface="eeprom">
+			<address index="+50"/>
+			</physical>
+			</parameter>
+			<parameter id="LONG_JT_ONDELAY">
+			<logical type="option">
+			<option id="ONDELAY"/>
+			<option id="RAMPON" default="true"/>
+			<option id="ON"/>
+			<option id="OFFDELAY"/>
+			<option id="RAMPOFF"/>
+			<option id="OFF"/>
+			<option id="NO_JUMP_IGNORE_COMMAND"/>
+			</logical>
+			<physical type="integer" size="0.4" interface="eeprom" endian="little" read_size="1">
+			<address index="+51.0"/>
+			</physical>
+			</parameter>
+			<parameter id="LONG_JT_RAMPON">
+			<logical type="option">
+			<option id="ONDELAY"/>
+			<option id="RAMPON"/>
+			<option id="ON" default="true"/>
+			<option id="OFFDELAY"/>
+			<option id="RAMPOFF"/>
+			<option id="OFF"/>
+			<option id="NO_JUMP_IGNORE_COMMAND"/>
+			</logical>
+			<physical type="integer" size="0.4" interface="eeprom" endian="little" read_size="1">
+			<address index="+51.4"/>
+			</physical>
+			</parameter>
+			<parameter id="LONG_JT_ON">
+			<logical type="option">
+			<option id="ONDELAY"/>
+			<option id="RAMPON"/>
+			<option id="ON"/>
+			<option id="OFFDELAY" default="true"/>
+			<option id="RAMPOFF"/>
+			<option id="OFF"/>
+			<option id="NO_JUMP_IGNORE_COMMAND"/>
+			</logical>
+			<physical type="integer" size="0.4" interface="eeprom" endian="little" read_size="1">
+			<address index="+52.0"/>
+			</physical>
+			</parameter>
+			<parameter id="LONG_JT_OFFDELAY">
+			<logical type="option">
+			<option id="ONDELAY"/>
+			<option id="RAMPON"/>
+			<option id="ON"/>
+			<option id="OFFDELAY"/>
+			<option id="RAMPOFF" default="true"/>
+			<option id="OFF"/>
+			<option id="NO_JUMP_IGNORE_COMMAND"/>
+			</logical>
+			<physical type="integer" size="0.4" interface="eeprom" endian="little" read_size="1">
+			<address index="+52.4"/>
+			</physical>
+			</parameter>
+			<parameter id="LONG_JT_RAMPOFF">
+			<logical type="option">
+			<option id="ONDELAY"/>
+			<option id="RAMPON"/>
+			<option id="ON"/>
+			<option id="OFFDELAY"/>
+			<option id="RAMPOFF"/>
+			<option id="OFF" default="true"/>
+			<option id="NO_JUMP_IGNORE_COMMAND"/>
+			</logical>
+			<physical type="integer" size="0.4" interface="eeprom" endian="little" read_size="1">
+			<address index="+53.0"/>
+			</physical>
+			</parameter>
+			<parameter id="LONG_JT_OFF">
 		<logical type="option">
 		<option id="ONDELAY" default="true"/>
 		<option id="RAMPON"/>
@@ -604,7 +604,7 @@
 		<address index="+53.4"/>
 		</physical>
 		</parameter>
-	</paramset>
+		</paramset>
 		
 		<paramset type="VALUES" id="hmw_dimmer_ch_values">
 			<parameter id="LEVEL" operations="read,write,event" control="DIMMER.LEVEL">
@@ -666,5 +666,353 @@
 			</parameter>
 		</paramset>
 	</channel>
+	
+	
+	<channel index="4" physical_index_offset="-1" count="1" type="SWITCH">
+		<link_roles>
+			<target name="SWITCH"/>
+		</link_roles>
+		<paramset type="MASTER" id="hmw_switch_ch_master" address_start="0x0B" address_step="2">
+			<parameter id="LOGGING">
+				<logical type="option">
+					<option id="OFF"/>
+					<option id="ON" default="true"/>
+				</logical>
+				<physical type="integer" size="0.1" interface="eeprom">
+					<address index="+0"/>
+				</physical>
+			</parameter>
+		</paramset>
+		<paramset type="LINK" id="hmw_switch_ch_link" peer_param="SENSOR" channel_param="CHANNEL" count="1" address_start="0x0F" address_step="28">
+			<parameter id="UI_HINT">
+				<logical type="string" default="" use_default_on_failure="true"/>
+				<physical type="string" interface="store" id="UI_HINT" save_on_change="true"/>
+			</parameter>
+			<parameter id="SENSOR" operations="none" hidden="true">
+				<logical type="address"/>
+				<physical type="array">
+					<physical type="integer" size="4.0" interface="eeprom">
+						<address index="+0"/>
+					</physical>
+					<physical type="integer" size="1.0" interface="eeprom">
+						<address index="+4"/>
+					</physical>
+				</physical>
+			</parameter>
+			<parameter id="CHANNEL" operations="none" hidden="true">
+				<logical type="integer" min="0" max="255" default="255"/>
+				<physical type="integer" size="1.0" interface="eeprom">
+				<address index="+5"/>
+				</physical>
+			</parameter>
+			<parameter id="SHORT_ON_TIME_MODE">
+				<logical type="option">
+				<option id="MINIMAL"/>
+				<option id="ABSOLUTE" default="true"/>
+				</logical>
+				<physical type="integer" size="0.1" interface="eeprom">
+				<address index="+6.7"/>
+				</physical>
+			</parameter>
+			<parameter id="SHORT_OFF_TIME_MODE">
+				<logical type="option">
+				<option id="MINIMAL"/>
+				<option id="ABSOLUTE" default="true"/>
+				</logical>
+				<physical type="integer" size="0.1" interface="eeprom">
+				<address index="+6.6"/>
+				</physical>
+			</parameter>
+			<parameter id="SHORT_TOGGLE_USE">
+				<logical type="option">
+				<option id="DONT_USE" default="true"/>
+				<option id="DIRECT"/>
+				<option id="INVERTED"/>
+				</logical>
+				<physical type="integer" size="0.2" interface="eeprom">
+				<address index="+6.4"/>
+				</physical>
+				<conversion type="option_integer">
+				<value_map device_value="0x03" parameter_value="0" from_device="true" to_device="true"/>
+				<value_map device_value="0x02" parameter_value="1" from_device="true" to_device="true"/>
+				<value_map device_value="0x00" parameter_value="2" from_device="true" to_device="true"/>
+				</conversion>
+			</parameter>
+			<parameter id="SHORT_ACTION_TYPE">
+				<logical type="option">
+				<option id="INACTIVE"/>
+				<option id="ACTIVE" default="true"/>
+				</logical>
+				<physical type="integer" size="0.1" interface="eeprom">
+				<address index="+6.0"/>
+				</physical>
+			</parameter>
+			<parameter id="SHORT_ONDELAY_TIME">
+				<logical type="float" min="0.0" max="982980.0" default="0.0" unit="s"/>
+				<physical type="integer" size="2.0" interface="eeprom" endian="little">
+				<address index="+7"/>
+				</physical>
+				<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
+				<conversion type="integer_integer_map">
+				<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
+				</conversion>
+			</parameter>
+			<parameter id="SHORT_ON_TIME">
+				<logical type="float" min="0.0" max="982980.0" default="16383000" unit="s">
+				<special_value id="NOT_USED" value="16383000"/>
+				</logical>
+				<physical type="integer" size="2.0" interface="eeprom" endian="little">
+				<address index="+9"/>
+				</physical>
+				<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
+				<conversion type="integer_integer_map">
+				<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
+				</conversion>
+			</parameter>
+			<parameter id="SHORT_OFFDELAY_TIME">
+				<logical type="float" min="0.0" max="982980.0" default="0.0" unit="s"/>
+				<physical type="integer" size="2.0" interface="eeprom" endian="little">
+				<address index="+11"/>
+				</physical>
+				<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
+				<conversion type="integer_integer_map">
+				<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
+				</conversion>
+			</parameter>
+			<parameter id="SHORT_OFF_TIME">
+				<logical type="float" min="0.0" max="982980.0" default="16383000" unit="s">
+				<special_value id="NOT_USED" value="16383000"/>
+				</logical>
+				<physical type="integer" size="2.0" interface="eeprom" endian="little">
+				<address index="+13"/>
+				</physical>
+				<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
+				<conversion type="integer_integer_map">
+				<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
+				</conversion>
+			</parameter>
+			<parameter id="SHORT_JT_ONDELAY">
+				<logical type="option">
+				<option id="ONDELAY"/>
+				<option id="ON" default="true"/>
+				<option id="OFFDELAY"/>
+				<option id="OFF"/>
+				<option id="NO_JUMP_IGNORE_COMMAND"/>
+				</logical>
+				<physical type="integer" size="0.3" interface="eeprom" endian="little" read_size="2">
+				<address index="+15.0"/>
+				</physical>
+			</parameter>
+			<parameter id="SHORT_JT_ON">
+				<logical type="option">
+				<option id="ONDELAY"/>
+				<option id="ON"/>
+				<option id="OFFDELAY" default="true"/>
+				<option id="OFF"/>
+				<option id="NO_JUMP_IGNORE_COMMAND"/>
+				</logical>
+				<physical type="integer" size="0.3" interface="eeprom" endian="little" read_size="2">
+				<address index="+15.3"/>
+				</physical>
+			</parameter>
+			<parameter id="SHORT_JT_OFFDELAY">
+				<logical type="option">
+				<option id="ONDELAY"/>
+				<option id="ON"/>
+				<option id="OFFDELAY"/>
+				<option id="OFF" default="true"/>
+				<option id="NO_JUMP_IGNORE_COMMAND"/>
+				</logical>
+				<physical type="integer" size="0.3" interface="eeprom" endian="little" read_size="2">
+				<address index="+15.6"/>
+				</physical>
+			</parameter>
+			<parameter id="SHORT_JT_OFF">
+				<logical type="option">
+				<option id="ONDELAY" default="true"/>
+				<option id="ON"/>
+				<option id="OFFDELAY"/>
+				<option id="OFF"/>
+				<option id="NO_JUMP_IGNORE_COMMAND"/>
+				</logical>
+				<physical type="integer" size="0.3" interface="eeprom" endian="little" read_size="2">
+				<address index="+15.9"/>
+				</physical>
+			</parameter>
+			<parameter id="LONG_ON_TIME_MODE">
+				<logical type="option">
+				<option id="MINIMAL"/>
+				<option id="ABSOLUTE" default="true"/>
+				</logical>
+				<physical type="integer" size="0.1" interface="eeprom">
+				<address index="+17.7"/>
+				</physical>
+			</parameter>
+			<parameter id="LONG_OFF_TIME_MODE">
+				<logical type="option">
+				<option id="MINIMAL"/>
+				<option id="ABSOLUTE" default="true"/>
+				</logical>
+				<physical type="integer" size="0.1" interface="eeprom">
+				<address index="+17.6"/>
+				</physical>
+			</parameter>
+			<parameter id="LONG_TOGGLE_USE">
+				<logical type="option">
+				<option id="DONT_USE" default="true"/>
+				<option id="DIRECT"/>
+				<option id="INVERTED"/>
+				</logical>
+				<physical type="integer" size="0.2" interface="eeprom">
+				<address index="+17.4"/>
+				</physical>
+				<conversion type="option_integer">
+				<value_map device_value="0x03" parameter_value="0" from_device="true" to_device="true"/>
+				<value_map device_value="0x02" parameter_value="1" from_device="true" to_device="true"/>
+				<value_map device_value="0x00" parameter_value="2" from_device="true" to_device="true"/>
+				</conversion>
+			</parameter>
+			<parameter id="LONG_MULTIEXECUTE">
+				<logical type="boolean" default="true"/>
+				<physical type="integer" size="0.1" interface="eeprom">
+				<address index="+17.2"/>
+				</physical>
+			</parameter>
+			<parameter id="LONG_ACTION_TYPE">
+				<logical type="option">
+				<option id="INACTIVE"/>
+				<option id="ACTIVE" default="true"/>
+				</logical>
+				<physical type="integer" size="0.1" interface="eeprom">
+				<address index="+17.0"/>
+				</physical>
+			</parameter>
+			<parameter id="LONG_ONDELAY_TIME">
+				<logical type="float" min="0.0" max="982980.0" default="0.0" unit="s"/>
+				<physical type="integer" size="2.0" interface="eeprom" endian="little">
+				<address index="+18"/>
+				</physical>
+				<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
+				<conversion type="integer_integer_map">
+				<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
+				</conversion>
+			</parameter>
+			<parameter id="LONG_ON_TIME">
+				<logical type="float" min="0.0" max="982980.0" default="16383000" unit="s">
+				<special_value id="NOT_USED" value="16383000"/>
+				</logical>
+				<physical type="integer" size="2.0" interface="eeprom" endian="little">
+				<address index="+20"/>
+				</physical>
+				<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
+				<conversion type="integer_integer_map">
+				<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
+				</conversion>
+			</parameter>
+			<parameter id="LONG_OFFDELAY_TIME">
+				<logical type="float" min="0.0" max="982980.0" default="0.0" unit="s"/>
+				<physical type="integer" size="2.0" interface="eeprom" endian="little">
+				<address index="+22"/>
+				</physical>
+				<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
+				<conversion type="integer_integer_map">
+				<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
+				</conversion>
+			</parameter>
+			<parameter id="LONG_OFF_TIME">
+				<logical type="float" min="0.0" max="982980.0" default="16383000" unit="s">
+				<special_value id="NOT_USED" value="16383000"/>
+				</logical>
+				<physical type="integer" size="2.0" interface="eeprom" endian="little">
+				<address index="+24"/>
+				</physical>
+				<conversion type="float_configtime" factors="0.1,1,60,1000" value_size="1.6"/>
+				<conversion type="integer_integer_map">
+				<value_map device_value="0xc000" parameter_value="0xffff" mask="0xc000"/>
+				</conversion>
+			</parameter>
+			<parameter id="LONG_JT_ONDELAY">
+				<logical type="option">
+				<option id="ONDELAY"/>
+				<option id="ON" default="true"/>
+				<option id="OFFDELAY"/>
+				<option id="OFF"/>
+				<option id="NO_JUMP_IGNORE_COMMAND"/>
+				</logical>
+				<physical type="integer" size="0.3" interface="eeprom" endian="little" read_size="2">
+				<address index="+26.0"/>
+				</physical>
+			</parameter>
+			<parameter id="LONG_JT_ON">
+				<logical type="option">
+				<option id="ONDELAY"/>
+				<option id="ON"/>
+				<option id="OFFDELAY" default="true"/>
+				<option id="OFF"/>
+				<option id="NO_JUMP_IGNORE_COMMAND"/>
+				</logical>
+				<physical type="integer" size="0.3" interface="eeprom" endian="little" read_size="2">
+				<address index="+26.3"/>
+				</physical>
+			</parameter>
+			<parameter id="LONG_JT_OFFDELAY">
+				<logical type="option">
+				<option id="ONDELAY"/>
+				<option id="ON"/>
+				<option id="OFFDELAY"/>
+				<option id="OFF" default="true"/>
+				<option id="NO_JUMP_IGNORE_COMMAND"/>
+				</logical>
+				<physical type="integer" size="0.3" interface="eeprom" endian="little" read_size="2">
+				<address index="+26.6"/>
+			</physical>
+			</parameter>
+			<parameter id="LONG_JT_OFF">
+				<logical type="option">
+					<option id="ONDELAY" default="true"/>
+					<option id="ON"/>
+					<option id="OFFDELAY"/>
+					<option id="OFF"/>
+					<option id="NO_JUMP_IGNORE_COMMAND"/>
+				</logical>
+				<physical type="integer" size="0.3" interface="eeprom" endian="little" read_size="2">
+					<address index="+26.9"/>
+				</physical>
+			</parameter>
+		</paramset>
+		<paramset type="VALUES" id="hmw_switch_ch_values">
+			<parameter id="STATE" operations="read,write,event" control="SWITCH.STATE">
+				<logical type="boolean" default="false"/>
+				<physical type="integer" interface="command" value_id="STATE">
+					<set request="LEVEL_SET"/>
+					<get request="LEVEL_GET" response="INFO_LEVEL"/>
+					<event frame="INFO_LEVEL"/>
+				</physical>
+				<conversion type="boolean_integer" threshold="1" false="0" true="200"/>
+			</parameter>
+			<parameter id="WORKING" operations="read,event" ui_flags="internal">
+				<logical type="boolean" default="false"/>
+				<physical type="integer" interface="command" value_id="STATE_FLAGS">
+					<get request="LEVEL_GET" response="INFO_LEVEL"/>
+					<event frame="INFO_LEVEL"/>
+					<event frame="ACK_STATUS"/>
+				</physical>
+				<conversion type="boolean_integer"/>
+			</parameter>
+			<parameter id="INHIBIT" operations="read,write,event" control="NONE" loopback="true">
+				<logical type="boolean" default="false"/>
+				<physical type="integer" interface="command" value_id="INHIBIT">
+					<set request="SET_LOCK"/>
+				</physical>
+			</parameter>
+			<parameter id="INSTALL_TEST" operations="write" ui_flags="internal">
+				<logical type="action"/>
+				<physical type="integer" interface="command" value_id="TOGGLE_FLAG" no_init="true">
+					<set request="TOGGLE_INSTALL_TEST"/>
+				</physical>
+				<conversion type="toggle" value="STATE" />
+			</parameter>
+		</paramset>
+		</channel>
 </channels>
 </device>

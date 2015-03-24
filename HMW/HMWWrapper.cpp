@@ -13,14 +13,14 @@ class HMWDevice : public HMWDeviceBase {
 
     //  channel 0..2 level 0..100
 	void setLevel(byte channel,uint16_t level) {
-        RGB_setChannel(channel,(float)level/200.0);
+        RGB_setChannel(channel+3,(float)level/200.0);
 
 	}
 
 
 	uint16_t getLevel(byte channel) {
 		uint16_t ret;
-		ret = RGB_getChannel(channel)*200.0;
+		ret = RGB_getChannel(channel+3)*200.0;
 		return ret;
 	};
 

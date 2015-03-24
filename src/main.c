@@ -15,8 +15,6 @@ int Systimeinit(void);
 
 void printHardwareValues(void);
 
-
-
 //Eeprom thingies:
 uint16_t VirtAddVarTab[NumbOfVar] = {0x5555, 0x6666, 0x7777};
 
@@ -75,6 +73,8 @@ int main(void)
 	while(1)
     {
 		HMW_loop();
+
+        RGB_loop();
 
 		if(flag==1)
 		{
