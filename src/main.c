@@ -38,14 +38,9 @@ volatile unsigned int systime;	// system Time in msec
 int main(void)
 {
 	SystemInit();
-
 	Usart1init();
-	//GPIOinit();
 	RGB_init();
-	//Tim2init();
 	Systimeinit();
-	//Usart3init();
-	//rs485Init(); //now in HMWWrapper
 
 	printHardwareValues();
 
@@ -65,11 +60,6 @@ int main(void)
 	//GPIO_WriteBit(GPIOA, GPIO_Pin_1, Bit_SET); // RED
 	//GPIO_WriteBit(GPIOA, GPIO_Pin_2, Bit_SET); // Green
 
-	int counter = 0;
-	uint16_t bla = 0;
-
-    float r=0,g=0, b=0;
-
 	while(1)
     {
 		HMW_loop();
@@ -79,58 +69,7 @@ int main(void)
 		if(flag==1)
 		{
 			flag = 0;
-			counter++;
-
-			/*
-			if(counter == 20)
-			{
-				int i=0;
-				char buffer[50] = {0};
-				int ret;
-				ret = rs485Read((void*)buffer, 50);
-				if(ret != 0)
-				{
-					//printf("ret=%d buffer: %s \n\r",ret, buffer);
-					printf("ret=%d buffer: ",ret);
-					for(i = 0; i< ret ; i++)
-					{
-						printf("%02X ", buffer[i]);
-					}
-					printf("\n\r",ret);
-				}
-			}
-
-			if(counter == 400)
-			{
-			    HMWbroadcast();
-				//rs485Write(buffer2, strlen(buffer2));
-				//while(1);
-
-			}
-            */
-
-			if(counter == 100)
-			{
-
-				hsv_to_rgb(&r, &g, &b,(float)bla++ ,1.0 , 0.2);
-                //RGB_set(r,g,b);
-				if(bla == 360) bla = 0;
-				//printf("%3d\n\r", bla);
-				counter = 0;
-
-			}
-			/*
-			if(counter == 1000)
-			{
-				GPIO_WriteBit(GPIOA, GPIO_Pin_2, Bit_SET); // Green
-				printf("on\n\r");
-			}
-			if(counter == 2000)
-			{
-				GPIO_WriteBit(GPIOA, GPIO_Pin_2, Bit_RESET); // Green
-				counter = 0;
-				printf("off\n\r");
-			}*/
+            // do sth. in 1 msec interval
 		}
     }
 }

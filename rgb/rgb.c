@@ -153,11 +153,14 @@ void RGB_loop(void)
                 static unsigned int fadetime = 0;
                 if(timediff(systime,fadetime) >= 100)
                 {
+                    fadetime = systime;
                     float r,g,b;
                     internal_h += 1;
+                    if(internal_h >= 360) internal_h = 0;
+
                     hsv_to_rgb(&r, &g, &b, internal_h, internal_s, internal_v);
                     RGB_set(r,g,b);
-                    if(internal_h >= 360) internal_h = 0;
+
                 }
                 break;
             }
@@ -199,6 +202,10 @@ void RGB_setChannel(int channel, float value)
                 if(rgbState==OFF)RGB_SetState(ON);  // leave state @ Fading
                 hsv_to_rgb(&internal_r, &internal_g, &internal_b, internal_h, internal_s, internal_v);
                 break;
+        case 6:
+                if(value > 0.5)RGB_SetState(Fading);
+                else RGB_SetState(ON);
+                break;
         default:
             return;
     }
@@ -215,6 +222,7 @@ float RGB_getChannel(int channel)
     if (channel == HUE)     return internal_h/360;
     if (channel == SATUATION)   return internal_s;
     if (channel == VALUE)    return internal_v;
+    if (channel == 6)       return (rgbState == Fading)? 1.0 : 0;
     return 0;
 }
 
@@ -257,6 +265,7 @@ void hsv_to_rgb(float* r, float* g, float* b, float h, float s, float v)	// http
 
 	h /= 60;				// sector 0 to 5
 	i = floor( h );
+	i %=6;
 	f = h - i;
 	p = v * ( 1 - s );
 	q = v * ( 1 - s * f );
