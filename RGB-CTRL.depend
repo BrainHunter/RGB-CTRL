@@ -23,35 +23,35 @@
 	<stddef.h>
 	<stdint.h>
 
-1427039497 d:\source\rgb-ctrl\eeprom\arduino-eeprom.h
+1427043097 d:\source\rgb-ctrl\eeprom\arduino-eeprom.h
 	<stdint.h>
 	"eeprom.h"
 
-1426523046 d:\source\rgb-ctrl\eeprom\eeprom.h
+1426526646 d:\source\rgb-ctrl\eeprom\eeprom.h
 	"stm32f10x.h"
 
-1426523773 d:\source\rgb-ctrl\inc\stm32f10x.h
+1426527373 d:\source\rgb-ctrl\inc\stm32f10x.h
 	"core_cm3.h"
 	"system_stm32f10x.h"
 	<stdint.h>
 	"stm32f10x_conf.h"
 
-1426523773 d:\source\rgb-ctrl\cmsis\core_cm3.h
+1426527373 d:\source\rgb-ctrl\cmsis\core_cm3.h
 	<stdint.h>
 	<core_cmInstr.h>
 	<core_cmFunc.h>
 
-1426523773 d:\source\rgb-ctrl\cmsis\core_cminstr.h
+1426527373 d:\source\rgb-ctrl\cmsis\core_cminstr.h
 	<cmsis_iar.h>
 	<cmsis_ccs.h>
 
-1426523773 d:\source\rgb-ctrl\cmsis\core_cmfunc.h
+1426527373 d:\source\rgb-ctrl\cmsis\core_cmfunc.h
 	<cmsis_iar.h>
 	<cmsis_ccs.h>
 
-1426523773 d:\source\rgb-ctrl\inc\system_stm32f10x.h
+1426527373 d:\source\rgb-ctrl\inc\system_stm32f10x.h
 
-1426523046 d:\source\rgb-ctrl\inc\stm32f10x_conf.h
+1426526646 d:\source\rgb-ctrl\inc\stm32f10x_conf.h
 	"stm32f10x_can.h"
 	"stm32f10x_dma.h"
 	"stm32f10x_flash.h"
@@ -61,28 +61,28 @@
 	"stm32f10x_usart.h"
 	"misc.h"
 
-1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_can.h
+1426527373 d:\source\rgb-ctrl\spl\inc\stm32f10x_can.h
 	"stm32f10x.h"
 
-1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_dma.h
+1426527373 d:\source\rgb-ctrl\spl\inc\stm32f10x_dma.h
 	"stm32f10x.h"
 
-1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_flash.h
+1426527373 d:\source\rgb-ctrl\spl\inc\stm32f10x_flash.h
 	"stm32f10x.h"
 
-1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_gpio.h
+1426527373 d:\source\rgb-ctrl\spl\inc\stm32f10x_gpio.h
 	"stm32f10x.h"
 
-1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_rcc.h
+1426527373 d:\source\rgb-ctrl\spl\inc\stm32f10x_rcc.h
 	"stm32f10x.h"
 
-1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_tim.h
+1426527373 d:\source\rgb-ctrl\spl\inc\stm32f10x_tim.h
 	"stm32f10x.h"
 
-1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_usart.h
+1426527373 d:\source\rgb-ctrl\spl\inc\stm32f10x_usart.h
 	"stm32f10x.h"
 
-1426523773 d:\source\rgb-ctrl\spl\inc\misc.h
+1426527373 d:\source\rgb-ctrl\spl\inc\misc.h
 	"stm32f10x.h"
 
 1426523046 d:\source\rgb-ctrl\hmw485-lib\hmwdebug.h
@@ -125,7 +125,7 @@
 	"Stream.h"
 	<stdint.h>
 
-1426523046 d:\source\rgb-ctrl\rs485\rs485.h
+1426526646 d:\source\rgb-ctrl\rs485\rs485.h
 	<stdint.h>
 
 1426523025 source:d:\source\rgb-ctrl\rs485\hm485.c
@@ -133,7 +133,7 @@
 
 1426523025 d:\source\rgb-ctrl\rs485\hm485.h
 
-1426627307 source:d:\source\rgb-ctrl\rs485\rs485.c
+1426630907 source:d:\source\rgb-ctrl\rs485\rs485.c
 	"rs485.h"
 	"stm32f10x_conf.h"
 
@@ -141,7 +141,7 @@
 	"rs485Stream.h"
 	"rs485.h"
 
-1426523773 source:d:\source\rgb-ctrl\spl\src\misc.c
+1426527373 source:d:\source\rgb-ctrl\spl\src\misc.c
 	"misc.h"
 
 1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_adc.c
@@ -158,7 +158,7 @@
 1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_bkp.h
 	"stm32f10x.h"
 
-1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_can.c
+1426527373 source:d:\source\rgb-ctrl\spl\src\stm32f10x_can.c
 	"stm32f10x_can.h"
 	"stm32f10x_rcc.h"
 
@@ -188,7 +188,7 @@
 1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_dbgmcu.h
 	"stm32f10x.h"
 
-1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_dma.c
+1426527373 source:d:\source\rgb-ctrl\spl\src\stm32f10x_dma.c
 	"stm32f10x_dma.h"
 	"stm32f10x_rcc.h"
 
@@ -198,7 +198,7 @@
 1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_exti.h
 	"stm32f10x.h"
 
-1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_flash.c
+1426527373 source:d:\source\rgb-ctrl\spl\src\stm32f10x_flash.c
 	"stm32f10x_flash.h"
 
 1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_fsmc.c
@@ -208,7 +208,7 @@
 1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_fsmc.h
 	"stm32f10x.h"
 
-1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_gpio.c
+1426527373 source:d:\source\rgb-ctrl\spl\src\stm32f10x_gpio.c
 	"stm32f10x_gpio.h"
 	"stm32f10x_rcc.h"
 
@@ -232,7 +232,7 @@
 1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_pwr.h
 	"stm32f10x.h"
 
-1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_rcc.c
+1426527373 source:d:\source\rgb-ctrl\spl\src\stm32f10x_rcc.c
 	"stm32f10x_rcc.h"
 
 1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_rtc.c
@@ -255,11 +255,11 @@
 1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_spi.h
 	"stm32f10x.h"
 
-1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_tim.c
+1426527373 source:d:\source\rgb-ctrl\spl\src\stm32f10x_tim.c
 	"stm32f10x_tim.h"
 	"stm32f10x_rcc.h"
 
-1426523773 source:d:\source\rgb-ctrl\spl\src\stm32f10x_usart.c
+1426527373 source:d:\source\rgb-ctrl\spl\src\stm32f10x_usart.c
 	"stm32f10x_usart.h"
 	"stm32f10x_rcc.h"
 
@@ -270,19 +270,19 @@
 1426523773 d:\source\rgb-ctrl\spl\inc\stm32f10x_wwdg.h
 	"stm32f10x.h"
 
-1427039365 source:d:\source\rgb-ctrl\eeprom\arduino-eeprom.cpp
+1427651400 source:d:\source\rgb-ctrl\eeprom\arduino-eeprom.cpp
 	"Arduino-EEPROM.h"
 	"eeprom.h"
 
-1426523025 source:d:\source\rgb-ctrl\eeprom\eeprom.c
+1426526625 source:d:\source\rgb-ctrl\eeprom\eeprom.c
 	"eeprom.h"
 
-1426523773 source:d:\source\rgb-ctrl\src\startup_stm32f10x_md.s
+1426527373 source:d:\source\rgb-ctrl\src\startup_stm32f10x_md.s
 
-1426523773 source:d:\source\rgb-ctrl\src\system_stm32f10x.c
+1426527373 source:d:\source\rgb-ctrl\src\system_stm32f10x.c
 	"stm32f10x.h"
 
-1427223618 source:d:\source\rgb-ctrl\src\main.c
+1438032149 source:d:\source\rgb-ctrl\src\main.c
 	"stm32f10x_conf.h"
 	<stdio.h>
 	<math.h>
@@ -290,35 +290,35 @@
 	"eeprom.h"
 	"rgb.h"
 
-1426541811 source:d:\source\rgb-ctrl\src\tinynew.cpp
+1426545411 source:d:\source\rgb-ctrl\src\tinynew.cpp
 	<new>
 	<malloc.h>
 
-1426628456 source:d:\source\rgb-ctrl\src\printf.c
+1426632056 source:d:\source\rgb-ctrl\src\printf.c
 	<stdio.h>
 	<stdarg.h>
 	"stm32f10x_conf.h"
 
-1426972683 source:d:\source\rgb-ctrl\hmw\debugstream.cpp
+1426976283 source:d:\source\rgb-ctrl\hmw\debugstream.cpp
 	"DebugStream.h"
 	"stdio.h"
 
-1426972396 d:\source\rgb-ctrl\hmw\debugstream.h
+1426975996 d:\source\rgb-ctrl\hmw\debugstream.h
 	"stream.h"
 
-1427042306 source:d:\source\rgb-ctrl\hmw\hmw485-lib\hmwmodule.cpp
+1427045906 source:d:\source\rgb-ctrl\hmw\hmw485-lib\hmwmodule.cpp
 	"HMWModule.h"
 	"HMWDebug.h"
 	<EEPROM.h>
 
-1427217832 d:\source\rgb-ctrl\hmw\hmw485-lib\hmwmodule.h
+1427221432 d:\source\rgb-ctrl\hmw\hmw485-lib\hmwmodule.h
 	"HMWRS485.h"
 	"Arduino.h"
 
-1426973127 d:\source\rgb-ctrl\hmw\hmw485-lib\hmwrs485.h
+1426976727 d:\source\rgb-ctrl\hmw\hmw485-lib\hmwrs485.h
 	"Arduino.h"
 
-1426970750 d:\source\rgb-ctrl\hmw\arduino.h
+1426974350 d:\source\rgb-ctrl\hmw\arduino.h
 	<stdbool.h>
 	<stdint.h>
 	<String.h>
@@ -326,7 +326,7 @@
 	"Stream.h"
 	"Arduino-EEPROM.h"
 
-1426972519 d:\source\rgb-ctrl\hmw\stream.h
+1426976119 d:\source\rgb-ctrl\hmw\stream.h
 	<stddef.h>
 	<stdint.h>
 
@@ -344,12 +344,12 @@
 1426523046 d:\source\rgb-ctrl\hmw\printfdebug.h
 	<stdio.h>
 
-1427217305 source:d:\source\rgb-ctrl\hmw\hmw485-lib\hmwrs485.cpp
+1427220905 source:d:\source\rgb-ctrl\hmw\hmw485-lib\hmwrs485.cpp
 	"HMWRS485.h"
 	"HMWDebug.h"
 	"Arduino.h"
 
-1427142217 source:d:\source\rgb-ctrl\hmw\hmwwrapper.cpp
+1427145817 source:d:\source\rgb-ctrl\hmw\hmwwrapper.cpp
 	"HMWWrapper.h"
 	"HMWRS485.h"
 	"HMWModule.h"
@@ -359,23 +359,23 @@
 	"DebugStream.h"
 	"rgb.h"
 
-1426618202 d:\source\rgb-ctrl\hmw\hmwwrapper.h
+1426621802 d:\source\rgb-ctrl\hmw\hmwwrapper.h
 
-1426972463 d:\source\rgb-ctrl\hmw\rs485stream.h
+1426976063 d:\source\rgb-ctrl\hmw\rs485stream.h
 	"Stream.h"
 	<stdint.h>
 
-1426972495 source:d:\source\rgb-ctrl\hmw\rs485stream.cpp
+1426976095 source:d:\source\rgb-ctrl\hmw\rs485stream.cpp
 	"rs485Stream.h"
 	"rs485.h"
 
 1423435166 d:\source\rgb-ctrl\hmw\printable.h
 	<stdlib.h>
 
-1426523046 source:d:\source\rgb-ctrl\hmw\hmw485-lib\hmwdebug.cpp
+1426526646 source:d:\source\rgb-ctrl\hmw\hmw485-lib\hmwdebug.cpp
 	"HMWDebug.h"
 
-1426523046 d:\source\rgb-ctrl\hmw\hmw485-lib\hmwdebug.h
+1426526646 d:\source\rgb-ctrl\hmw\hmw485-lib\hmwdebug.h
 	"Arduino.h"
 
 1426523046 source:d:\source\rgb-ctrl\hmw\hmw485-lib\hmwdebug.h
@@ -389,10 +389,10 @@
 	"Arduino.h"
 	"Print.h"
 
-1427141707 d:\source\rgb-ctrl\rgb\rgb.h
+1427145307 d:\source\rgb-ctrl\rgb\rgb.h
 	<stdint.h>
 
-1427223154 source:d:\source\rgb-ctrl\rgb\rgb.c
+1438033341 source:d:\source\rgb-ctrl\rgb\rgb.c
 	"rgb.h"
 	"stm32f10x_conf.h"
 	<math.h>

@@ -17,7 +17,7 @@ uint8_t EEPROMClass::read(int address)
         	uint32_t *uid;
             uid = (uint32_t*)0x1FFFF7E8;
             //printf("UID[0]: 0x%08X\n\r", (unsigned int)uid[0]);
-            Data = (uid[0] >> shift) &0xFF;
+            Data = (uid[0] >> shift*8) &0xFF;
     }
     else if(EE_ReadVariable((uint16_t) address, &Data))
 	{

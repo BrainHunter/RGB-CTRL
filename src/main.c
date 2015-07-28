@@ -55,7 +55,7 @@ int main(void)
 	//rs485Write(buffer2, 32);
 
 	//GPIO_WriteBit(GPIOA, GPIO_Pin_3, Bit_SET);		// Ext SW
-	GPIO_WriteBit(GPIOA, GPIO_Pin_3, Bit_RESET);	// Ext SW
+	//GPIO_WriteBit(GPIOA, GPIO_Pin_3, Bit_RESET);	// Ext SW
 	//GPIO_WriteBit(GPIOA, GPIO_Pin_0, Bit_SET); // Blue
 	//GPIO_WriteBit(GPIOA, GPIO_Pin_1, Bit_SET); // RED
 	//GPIO_WriteBit(GPIOA, GPIO_Pin_2, Bit_SET); // Green

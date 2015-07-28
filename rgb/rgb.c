@@ -104,6 +104,8 @@ int GPIOinit(void)
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_2MHz;
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
+	// initialize as Low
+	GPIO_WriteBit(GPIOA, GPIO_Pin_3, Bit_RESET);	// Ext SW
 
 	return 0;
 }
@@ -132,10 +134,15 @@ void RGB_SetState(int State)
 
 void RGB_loop(void)
 {
-    // check if we can switch to OFf
-    if(internal_r == 0 && internal_g == 0 && internal_b == 0 && rgbState == ON)   // light is off
+    // check if we can switch to OFF
+    if(internal_r == 0 && internal_g == 0 && internal_b == 0)   // light is off
     {
-        RGB_SetState(OFF);
+        if(rgbState != OFF) // only goto state off if state is not off
+        {                   // --> we do no overwrite rgbTime in every loop
+            RGB_SetState(OFF);
+        }
+    }else{  //the light is on --> activate the external psu.
+        GPIO_WriteBit(GPIOA, GPIO_Pin_3, Bit_SET);  // Ext SW On
     }
 
     switch(rgbState)
@@ -173,7 +180,6 @@ void RGB_loop(void)
 
 void RGB_setChannel(int channel, float value)
 {
-    GPIO_WriteBit(GPIOA, GPIO_Pin_3, Bit_SET);
     switch(channel)
     {
         case RED:
