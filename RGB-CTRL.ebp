@@ -109,6 +109,9 @@
 		<Unit filename="HMW\HMWWrapper.h" />
 		<Unit filename="HMW\PrintfDebug.h" />
 		<Unit filename="HMW\Stream.h" />
+		<Unit filename="HMW\WMath.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="HMW\arduino.h" />
 		<Unit filename="HMW\rs485Stream.cpp">
 			<Option compilerVar="CC" />

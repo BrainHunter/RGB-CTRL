@@ -280,7 +280,7 @@ our %definition = (
 							"level" => {
 								"control" => "dimmer.level",
 								"conversion" => {
-									"factor" => 2,
+									"factor" => 200,
 									"type" => "float_integer_scale"
 								},
 								"logical" => {

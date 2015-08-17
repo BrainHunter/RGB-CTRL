@@ -18,7 +18,7 @@ class HMWDevice : public HMWDeviceBase {
 	}
 
 
-	uint16_t getLevel(byte channel) {
+	uint16_t getLevel(byte channel, byte command) {
 		uint16_t ret;
 		ret = RGB_getChannel(channel+3)*200.0;
 		return ret;
@@ -46,12 +46,20 @@ void Init_HMW(){
 	hmwrs485 = new HMWRS485(&RS485Stream, 0);
 	hmwmodule = new HMWModule(&hmwdevice, hmwrs485, 0xA0);
 
-    // initial Broadcast Announce at power up
-    hmwmodule->broadcastAnnounce(0);
-
 }
 
 void HMW_loop(){
+	// broadcast announce:
+	static bool announced = false;
+	if(!announced)
+    {
+        if(systime > 1000)
+        {
+            announced = (hmwmodule->broadcastAnnounce(0) == 0);
+        }
+    }
+
+
 	hmwrs485->loop();
 }
 
