@@ -162,23 +162,28 @@ our %definition = (
 						"address_start" => 0x0B,
 						"address_step" => 1,
 						"parameter" => {
-							"id" => "logging",
-							"logical" => {
-								"option" => {
-									"off" => {},
-									"on" => {
-										"default" => true
+							"logging" => {
+								"id" => "logging",
+								"logical" => {
+									"option" => [
+									{
+										"id" => "off"
+									},
+									{
+										"default" => true,
+										"id" => "on"
 									}
+									],
+									"type" => "option"
 								},
-								"type" => "option"
-							},
-							"physical" => {
-								"address" => {
-									"index" => 0
-								},
-								"interface" => "eeprom",
-								"size" => 0.1,
-								"type" => "integer"
+								"physical" => {
+									"address" => {
+										"index" => 0
+									},
+									"interface" => "eeprom",
+									"size" => 0.1,
+									"type" => "integer"
+								}
 							}
 						},
 						"type" => "master"
@@ -208,14 +213,21 @@ our %definition = (
 									}
 								},
 								"logical" => {
-									"option" => {
-										"down" => {},
-										"none" => {
-											"default" => true
-										},
-										"undefined" => {},
-										"up" => {}
+									"option" => [
+									{
+										"default" => true,
+										"id" => "none"
 									},
+									{
+										"id" => "up"
+									},
+									{
+										"id" => "down"
+									},
+									{
+										"id" => "undefined"
+									}
+									],
 									"type" => "option"
 								},
 								"operations" => "read,event",
@@ -285,7 +297,7 @@ our %definition = (
 								},
 								"logical" => {
 									"default" => 0.0,
-									"max" => 100.0,
+									"max" => 1.0,
 									"min" => 0.0,
 									"type" => "float",
 									"unit" => "100%"
@@ -437,12 +449,15 @@ our %definition = (
 						"parameter" => {
 							"id" => "logging",
 							"logical" => {
-								"option" => {
-									"off" => {},
-									"on" => {
-										"default" => true
-									}
+								"option" => [
+								{
+									"id" => "off"
 								},
+								{
+									"default" => true,
+									"id" => "on"
+								}
+								],
 								"type" => "option"
 							},
 							"physical" => {
